@@ -1,0 +1,120 @@
+
+
+
+// color
+
+// BASE COLORS
+$white: #ffffff;
+
+$red: #972020;
+   $light-red: #a00a00;
+   $dark-red: #c71414;
+   $darker-red: #A63737;
+   // $darker-red: #660200;
+   $matte-red:#C5252B;
+
+$black: #010101;
+   $deep-gray: #0f0f0f;
+   $dark-gray: #333333;
+   $slate: #3e3e3e;
+   $medium-gray: #555555;
+   $gray: #777777;
+   $lighter-gray: #aaa;
+   $light-gray: #cccccc;
+   $silver: #f2f2f2;
+   $silvercloud: #f9f9f9;
+   $silverline: #f8f8f8;
+   $silversky: #fcfcfc;
+   $dklight-gray: rgba($gray, 0.7); 
+
+$tan: #FCF9EF;
+
+$green: #209742;
+  $dark-green: #014A16;
+  $light-green: #97b537;
+
+$pink: #f44a56;
+
+$orange: #FF530D;
+  $light-orange: #F59417;
+  $dark-orange: #F6491F;
+  $darker-orange: #C23A19;
+  $orange-red: #E82C0C;
+
+
+$blue: #275d84;
+  $dark-blue: #0B42A7;
+  $light-blue: #44B9EB;
+  $light-light-blue: rgba($light-blue, 0.3);
+  $matte-blue: #244358;
+  $sky-blue: #68C6EE;
+  $deep-blue: #123456;
+
+
+
+// 
+// DEFINED VARIABLE COLORS
+// 
+
+$hover_color: rgba($light-blue, 0.4); ////rgba($dark-gray, 0.12); //color: white; 
+$color_link_hover: $orange;
+$color_link: $red;
+
+
+
+
+/*
+kuler: Lifedots 1
+*/
+$life1: #2A3140;
+$life2: #F2D399;
+$life3: #F29863;
+$life4: #D95F43;
+$life5: #A63737;
+
+
+/*
+kuler: Norse
+*/
+$norse1: #9C001A;
+$norse2: #FFFBDB;
+$norse3: #ACBFCC;
+$norse4: #77838C;
+$norse5: #41484C;
+
+$color1: $norse1;
+$color2: $norse2;
+$color3: $norse3;
+$color4: $norse4;
+$color5: $norse5;
+$color6: $life1;
+$color7: $life2;
+$color8: $life3;
+$color9: $life4;
+$color0: $life5;
+
+
+
+
+// $orange: $color2-5;
+$color-teal: #0096A9;
+$color-purple: #8431A6;
+
+
+$color-base: $medium-gray;
+$color-black: $deep-gray;
+$color-pureblack: $black;
+$color-bg: $color-pureblack;
+$color-contentbg: $silversky;
+$color-base-white: $silver;
+
+
+// iterum colors
+
+%background {
+  background-color: $color_contentbg;
+}
+
+
+
+

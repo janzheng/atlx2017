@@ -1,0 +1,123 @@
+
+
+// INTRO BLOCK
+
+.intro {
+  position: fixed;
+  width: 100%;
+  z-index: $z-top;
+
+  #intro-block {
+    display: block;
+  }
+
+  .home-hero {
+
+    position: relative;
+    z-index: 100;
+
+    .slope-container {
+      // background-color: $silversky;
+      // use as the bottom of a menu bg container
+    }
+
+    .slope-content {
+      padding-top: 0;
+    }
+
+    .slope-negThree {
+      background-color: $color-pureblack;
+      // height: 94vh;
+    }
+
+    .intro-hero-container {
+      // position: relative;
+      position: fixed;
+      width: 100%;
+    }
+
+    .intro-hero {
+      background: url('../../app/images/hero.jpg');
+      // height: 100%;
+      height: 600px;
+      width: 800px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: calc(50%)  0; // image not completely centered
+      // background-color: $color-pureblack;
+      display: inline-block;
+      width: 100%;
+      max-width: 800px;
+      // opacity: 0.4;
+      // width: 100%;
+    }
+
+    .home-logo {
+      // background: url('../../app/images/iterum.png');
+      // width: 100%;
+      position: fixed;
+      padding-top: 100px;
+      width: 100%;
+
+      img {
+        width: 200px;
+        position: relative;
+      }
+    }
+  }
+
+}
+
+
+  .home-main {
+    #home-main-content {
+      margin-top: 640px;
+    }
+    .home-main-content {
+      // padding-top: 120px;
+    }
+    .home-main-hero {
+      height: 1240px;
+      overflow:hidden;
+    }
+
+    &:before {
+      display: block;
+      // content: '';
+      background: url('../../app/images/iterum.png');
+      height: 100vh;
+      position: fixed;
+      width: 100%;
+      opacity: 0.03;
+      margin: 0 auto;
+      top: 0%;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    // this preserves the slope
+    margin-top: -$base*10;
+    padding-top: $base*10;
+
+    color: $color-base; 
+
+    & > .container {
+      position: relative;
+      z-index: 50;
+      padding-top: $base*2;
+      padding-bottom: $base*4;
+    }
+
+    .home-statement {
+      @extend %h1;
+      padding-left: $base;
+      padding-right: $base;
+    }
+
+  }
+
+
+
+
+
+
