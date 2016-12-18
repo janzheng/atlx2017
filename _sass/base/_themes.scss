@@ -1,0 +1,366 @@
+
+
+// 
+// 
+//    THEME DEFINITIONS
+// 
+// 
+
+  $color-novelmonkey: $color_red;
+
+
+  // links
+  $color-link: $color-red;
+  $color-link-hover: getHoverColor($color-red); // $color-red;
+  $color-link-underline: getHoverColor($color-red);
+
+  // buttons
+  $color-button-text: $color-yellow;
+  $color-button-bg: $color-red;
+  $color-button-hover-bg: getHoverColor($color-red);
+  $color-button-border: $color-red;
+
+  // inputs
+  $color-input-border: $color-gray-light;
+  $color-input-bg: $color-silver;
+
+  //  card insert
+  $color-card-bg: $color-white;
+
+  $color-highlight: $color-red;
+
+
+  // 
+  // 
+  // PAGE BASED COLORS
+  // 
+  // 
+
+  // Loading
+  $color-loading-bg: $color-yellow;
+  $color-loading-text: $color-red;
+
+
+  // links
+  $color-dark-link: rgba($color-red, 1);
+  $color-dark-link-hover: rgba($color-white, 1); // $color-red;
+  $color-dark-link-underline: $color-dark-link-hover;
+
+
+
+  // basic color theme
+  $color-logo: $color-red; // #7ECDF8 !important;
+  $color-bg: $color-paper;
+  $color-text: $color-black;
+  $color-urgent: $color-red;
+  $color-nav-bg: $color-yellow; //$color-silver;
+
+
+
+
+
+
+/*
+  
+    DAYLIGHT MODE
+    / DEFAULT (day) CONTEXTUAL COLORS
+
+*/
+
+  // theme-button-red
+  //   bg: red
+  //   text: yellow
+  //   hover-bg: dark-red
+  //   border: dark-red
+  //   active-text: white – special case for login
+  //   active-border: red
+  %theme-button-red, ._theme-button-red {
+    background-color: $color-red;
+    color: $color-yellow;
+    border: $border-width solid $color-button-border;
+    &:hover {
+      background-color: getHoverColor($color-red);
+      border-color: $color-button-hover-bg;
+    }
+  }
+
+  %theme-button-red_yellow, ._theme-button-red_yellow {
+    background-color: $color-red;
+    color: $color-yellow;
+    border: $border-width solid $color-yellow;
+    &:hover {
+      background-color: getHoverColor($color-red);
+      border: $border-width solid getHoverColor($color-yellow);
+    }
+  }
+
+  %theme-button-red_black, ._theme-button-red_black {
+    background-color: $color-red;
+    color: $color-blacker;
+    border: $border-width solid $color-red;
+    &:hover {
+      background-color: getHoverColor($color-red);
+      border: $border-width solid getHoverColor($color-red);
+    }
+  }
+
+  %theme-button-transparent_white, ._theme-button-transparent_white {
+    background-color: transparent;
+    border-color: transparent;
+    color: $color-red;
+
+    &:hover {
+      // background-color: getHoverColor($color-red);
+      color: $color-white;
+      border: $border-width solid getHoverColor($color-red);
+    }
+  }
+
+
+
+
+  // theme-button-silver
+  //   bg: silver
+  //   text: red
+  //   hover-bg: red
+  //   hover-text: silver
+  %theme-button-silver,  {
+    background-color: $color-silver;
+    border: $border-width solid $color-silver;
+    color: $color-red;
+    &:hover {
+      background-color: getHoverColor($color-red);
+      border-color: getHoverColor($color-red);
+      color: $color-silver;
+    }
+  }
+
+  // theme-button-blacker
+  //   bg: blacker
+  //   text: gray
+  //   hover-bg: red
+  //   hover-text: blacker
+  %theme-button-blacker,  {
+    background-color: $color-moonlight-2;
+    border: $border-width solid $color-moonlight-2;
+    color: $color-gray;
+    &:hover {
+      background-color: getHoverColor($color-red);
+      border-color: getHoverColor($color-red);
+      color: $color-blacker;
+    }
+  }
+
+  // theme-input-silver
+  //   bg: silver
+  //   placeholder-text: light gray
+  //   border: dark gray
+  //   border-focus: red half-opacity
+  %theme-input-silver, ._theme-input-silver {
+    background-color: $color-silver;
+    color: $color-black;
+    @extend %ease;
+    @include input-placeholder {
+      color: $color-gray;
+    }
+    border: $border-width solid rgba($color-gray, 1);
+    &:focus {
+      @extend %ease;
+      border-color: rgba($color-red, 1);
+      outline: rgba($color-red, 0.5);
+    }
+  }
+
+  %theme-input-transparent, ._theme-input-transparent {
+    @extend %theme-input-silver;
+    color: $color-silver;
+    background-color: transparent;
+  }
+
+
+
+  // theme-link-red
+  //   text: red
+  //   hover: dark red
+  //   border: 2px solid dark red
+  //   ease
+  //   (some of these inherits from _typography)
+  %theme-link-red, ._theme-link-red {
+    a, a:focus, a:active, a:link {
+      color: $color-red !important;
+      border-color: transparent !important; //$color-red;
+      &:hover {
+        color: getHoverColor($color-red) !important;
+        border-color: getHoverColor($color-red) !important;
+      }
+    }
+  }
+
+  // theme-link-yellow
+  //   text: yellow
+  //   hover: orange
+  //   border: transparent
+  //   hover-border: 2px solid dark red
+  //   ease
+  //   (some of these inherits from _typography)
+  %theme-link-yellow, ._theme-link-yellow {
+    a, a:focus, a:active, a:link {
+      color: $color-yellow;
+      border-color: rgba($color-orange,0);
+      &:hover {
+        color: getHoverColor($color-orange);
+        border-color: getHoverColor($color-orange);
+      }
+    }
+  }
+
+  // theme-link-dark
+  //   text: orange
+  //   hover: white
+  //   border: 2px solid orange
+  //   ease
+  //   (some of these inherits from _typography)
+  %theme-link-dark, ._theme-link-dark {
+    a, a:focus, a:active, a:link {
+      color: $color-dark-link;
+      border-color: $color-dark-link;
+      &:hover {
+        color: $color-dark-link-hover;
+        border-color: $color-dark-link-underline;
+      }
+    }
+  }
+
+
+  // 
+  //    THEMES
+  // 
+
+  // theme 1
+  // home / main page
+  //   bg: yellow
+  //   text: black
+  //   link: red
+  //   link-hover: hover-red
+  //   button: %theme-button-red
+  //   subtitle text: black
+  $color-bg1: $color-yellow;
+  $color-text1: $color-black;
+  %theme-section-1, ._theme-section-1 {
+    background: $color-bg1;
+    color: $color-text1;
+
+    @extend %theme-link-red;
+    // @extend %theme-button-red;
+
+    ._subtitle {
+      color: $color-black;
+    }
+  }
+
+
+  // theme 2
+  // join us for free
+  //   bg: red
+  //   text: yellow
+  //   highlight: orange
+  //   link: orange
+  //   link-hover: white
+  //   button:
+  //   anti-aliased
+
+  $color-bg2: $color-red;
+  $color-text2: $color-yellow;
+  // home / main page
+  %theme-section-2, ._theme-section-2 {
+    background: $color-bg2;
+    color: $color-text2;
+
+    @extend %theme-link-dark;
+  }
+
+
+  // theme 3
+  // help us help you / card
+  //   bg: white
+  //   text: black
+  //   highlight: red
+  //   link: red
+  //   link-hover: hover-red
+
+  //   button: red
+  //   button-text: yellow
+  //   button-border: red
+  //   button-hover: hover-red
+
+  //   input: gray
+  //   input-focus: red
+
+  $color-bg3: $color-white;
+  $color-text3: $color-black;
+
+  %theme-section-3, ._theme-section-3 {
+    background: $color-bg3;
+    color: $color-text3;
+
+    // @extend %theme-link-red;
+    button, .button {
+      @extend %theme-button-red;
+    }
+  }
+
+
+  // theme 4
+  // footer, novel-section
+  //   bg: silver
+  //   text: black
+  //   subtitle: gray (888)
+  //   highlight: red
+  //   link: red
+  //   link-hover: hover-red 2px border-bottom 
+
+  $color-bg4: $color-silver;
+  $color-text4: $color-black;
+
+  %theme-section-4, ._theme-section-4 {
+    background: $color-bg4;
+    color: $color-text4;
+
+    // @extend %theme-link-red;
+    button, .button {
+      @extend %theme-button-red;
+    }
+  }
+
+
+
+  // theme 5
+  // new user block
+  //   bg: green
+  //   text: black
+  //   highlight: red
+  //   link: red
+  //   link-hover: red
+    
+  //   button: red
+  //   button-border: 
+  //   button-text: yellow
+
+  $color-bg5: $color-green;
+  $color-text5: $color-black;
+
+  %theme-section-5, ._theme-section-5 {
+    background: $color-bg5;
+    color: $color-text5;
+
+    @extend %theme-link-red;
+  }
+
+
+  %button, button, .button {
+    @extend %theme-button-red;
+  }
+
+
+
+

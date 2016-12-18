@@ -1,0 +1,21 @@
+
+// z-order
+// $z-top: 9999;
+
+// 
+//    Z-Values
+//
+$z-max: 9998;
+$z-top: 8888;
+$z-menu: 7777;
+$z-hero-content: 2222;
+$z-hero-bg: 2200;
+
+._z_top {
+  z-index: $z-top; // Bert uses 9999 and needs to be on top
+}
+
+
+
+
+

@@ -1,0 +1,14 @@
+
+
+%border-base {
+  padding: 0;
+  border: none;
+  border-top: medium double #333;
+  color: #333;
+  text-align: center;
+}
+
+._border-light {
+  @extend %border-base;
+  border-top: 2px solid $color-black;
+}

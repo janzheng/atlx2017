@@ -1,0 +1,416 @@
+
+
+// 
+// 
+//    VARIABLES
+//    RESPONSIVE GRID
+// 
+// 
+
+
+
+// 
+// 
+//    GENERAL / SPECIFIC
+// 
+// 
+
+// 3:4 typographic scale
+// $base-m4:    7px;
+// $base-m3:    9px;
+// $base-m2:    12px;
+// $base-m1:    16px;  // 'minus' values
+// $base:       21px;  // Base Size
+//   $base2:    $base*2;
+// $base-p1:    28px;  // 'plus' values
+// $base-p2:    37px;
+// $base-p3:    50px;
+// $base-p4:    67px;
+// $base-p5:    89px;
+// $base-p6:   119px;
+// $base-p7:   159px;
+
+
+$base-m3:    7px;
+$base-m2:    9px;
+$base-m1:    12px;
+$base:       16px;  // 'minus' values
+  $base2:    $base*2;
+$base-p1:    21px;  // Base Size
+$base-p2:    28px;  // 'plus' values
+$base-p3:    37px;
+$base-p4:    50px;
+$base-p5:    67px;
+$base-p6:    89px;
+$base-p7:   119px;
+$base-p8:   159px;
+
+
+
+
+// these are just the bootstrap defaults converted to my own vars
+
+// xs 0   - 767
+// sm 768 - 991
+// md 992 - 1199
+// lg 1200 + 
+
+// b/c of pixel density, these descriptions are just for ease of describing width
+// shouldn't matter what devices people use
+
+// "mobile"
+$width_site_min: 360px; // absolute minimum site width
+$width_xs_min: 0px !default; 
+$width_xs_max: 767px !default;
+
+$width_magic: 660px !default; // somehow this seems to be the magical breaking point
+
+// "tablet"
+$width_sm_min: 768px !default;
+$width_sm_max: 991px !default;
+
+// "desktop"
+$width_md_min: 992px !default;
+$width_md_max: 1199px !default;
+
+// "wide"
+$width_lg_min: 1200px !default;
+
+
+// 
+//    RESPONSIVE STUFF
+//    usage:
+//      @include screen-mobile {
+//        color: red;
+//      }
+// 
+
+@mixin screen-mobile-only {
+  @media (max-width: $width_xs_max) {
+    @content;
+  }
+}
+
+// below 'magic' point
+@mixin screen-magic-down {
+  @media (max-width: $width_magic) {
+    @content;
+  }
+}
+  // above 'magic' point
+  @mixin screen-magic-up {
+    @media (min-width: $width_magic) {
+      @content;
+    }
+  }
+
+// tablet and bigger
+@mixin screen-tablet {
+  @media (min-width: $width_sm_min) {
+    @content;
+  }
+}
+  // tablet and smaller
+  @mixin screen-tablet-down {
+    @media (min-width: $width_xs_min) and (max-width: $width_sm_max){
+      @content;
+    }
+  }
+  @mixin screen-tablet-only {
+    @media (min-width: $width_sm_min) and (max-width: $width_sm_max){
+      @content;
+    }
+  }
+
+// desktop and bigger
+@mixin screen-desktop {
+  @media (min-width: $width_md_min) {
+    @content;
+  }
+}
+  // desktop and smaller
+  @mixin screen-desktop-down {
+    @media (min-width: $width_xs_min) and (max-width: $width_md_max){
+      @content;
+    }
+  }
+  @mixin screen-desktop-only {
+    @media (min-width: $width_md_min) and (max-width: $width_md_max){
+      @content;
+    }
+  }
+
+// wide (and up)
+// wide and smaller would just be everything
+@mixin screen-wide {
+  @media (min-width: $width_lg_min) {
+    @content;
+  }
+}
+
+
+// custom scenarios
+
+@mixin screen-above ($min) {
+  @media (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin screen-below ($max) {
+  @media (max-width: $max) {
+    @content;
+  }
+}
+
+// show & hide;
+
+
+
+._hideMobile {
+  @media (max-width: $width_xs_max) {
+    display: none;
+  }
+}
+._hideTabletDown {
+  @media (max-width: $width_sm_max) {
+    display: none;
+  }
+}
+  ._hideTabletOnly {
+    @media (min-width: $width_sm_min) and (max-width: $width_sm_max) {
+      display: none;
+    }
+  }
+  ._hideTabletUp {
+    @media (min-width: $width_sm_min) {
+      display: none;
+    }
+  }
+._hideDesktopDown {
+  @media (max-width: $width_md_max) {
+    display: none;
+  }
+}
+  ._hideDesktopUp {
+    @media (min-width: $width_md_min) {
+      display: none;
+    }
+  }
+
+._hideMagicUp {
+  @media (min-width: $width_magic) {
+    display: none;
+  }
+}
+
+  ._hideMagicToTablet {
+    @media (min-width: $width_magic) and (max-width: $width_sm_min) {
+      display: none;
+    }
+  }
+
+
+
+._showMobileOnly {
+  @media (max-width: $width_xs_max) {
+    display: inherit;
+  }
+}
+._showTabletUp {
+  @media (min-width: $width_sm_min) {
+    display: inherit;
+  }
+}
+._showMagicToTablet {
+  @media (min-width: $width_magic) and (max-width: $width_sm_min) {
+    display: inherit;
+  }
+}
+
+
+
+// 
+// Special User Agent detection classes
+//
+
+// only for tablet, mobile, regardless of breakpoint
+// ._hideHandheld, %_hideHandheld {
+.handheld {
+  ._hideHandheld {
+    display: none !important;
+  }
+  ._showHandheld {
+    display: block !important;
+  }
+}
+
+
+
+
+
+
+
+
+// 
+//    BUTTONS
+// 
+/* 
+._button {
+  @extend %ease-fast;
+  &:hover {
+    @extend %ease-fast;
+  }
+
+  background: none;
+  border-radius: 0;
+  border-width: $border-width;
+  // padding: 14px 35px !important;
+  // padding: 28px 35px;
+  // line-height: 0;
+
+  padding: 0px 35px !important;
+  line-height: 45px !important;
+
+  @extend h5; font-weight: 600 !important;
+  font-size: 12px;
+
+    &._button_white {
+      color: rgba($color_white, 1);
+      border-color: rgba($color_white, 1);
+
+      &:hover {
+        background: rgba($color_white, 1);
+        border-color: rgba($color_white, 0.8);
+        color: rgba($color_black, 1)
+      }
+    }
+
+    &._button_yellow {
+      color: rgba($color_yellow, 1);
+      border-color: rgba($color_yellow, 1);
+
+      &:hover {
+        background: rgba($color_yellow, 1);
+        color: rgba($color_black, 0.7)
+      }
+    }
+
+    &._button_gray-transparent {
+      color: rgba($color_white, 1);
+      border-color: rgba($color_gray-light, 0.9);
+
+      &:hover {
+        color: rgba($color_yellow, 1);
+        border-color: rgba($color_yellow-dark, 1);
+        background: transparent;
+      }
+    }
+}
+ */
+
+
+
+
+
+
+// 
+// 
+// 
+//    RESPONSIVE VARIABLES, READABILITY, OTHER VARIABLES
+// 
+// 
+// 
+
+
+
+// used by lines, buttons, as border-width, etc.
+$border-width: 2px;
+$border-radius: 4px; $radius: $border-radius;
+
+
+// border and button width
+$grid-padding: 12px; // sets the padding of the grid
+$grid-border: $border-width;
+
+
+
+
+// max-width for any type of content
+$max-width: $base * 26;
+$max-container-width: $base * 40;
+$max-container-width-smaller: $base * 30;
+$max-widest: $width_lg_min;
+
+%max-responsive-padding {
+  // padding, dynamic width on tablet
+  @include screen-tablet-down {
+    padding-left: $base*2;
+    padding-right: $base*2;
+    max-width: 100%;
+  }
+}
+  %responsive-padding {
+    @include screen-tablet-down {
+      padding-left: $base*2;
+      padding-right: $base*2;
+    }
+  }
+
+%max-width, ._max-width {
+  @extend %max-responsive-padding;
+  max-width: $max-width;
+}
+
+
+// enforces maximum readability for body copy
+%copy-width {
+  @extend %max-responsive-padding;
+  max-width: $max-width;
+
+  @include screen-tablet-down {
+    max-width: $max-width - $base*4;
+  }
+}
+
+%max-container-width, ._max-container-width {
+  @extend %max-responsive-padding;
+  max-width: $max-container-width;
+
+  @include screen-tablet-down {
+    max-width: $max-container-width-smaller;
+  }
+
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+%max-widest {
+  padding-left: $base;
+  padding-right: $base;
+  max-width: $max-widest;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+._copySection, %copySection {
+  @extend %copy-width;
+  @extend %margin-section;
+  // margin-bottom: 0 !important;
+}
+._copySectionNarrow, %copySectionNarrow {
+  @extend %copy-width;
+  @extend %margin-section;
+  margin-top: $base*1.5;
+  margin-bottom: $base*1.5;
+  // margin-bottom: 0 !important;
+}
+
+
+
+
+
+

@@ -1,0 +1,82 @@
+
+
+
+
+// follows the $base (21px) vertical rhythm, so should always be a multiple of 21
+// border, padding, line-height, and text size all affect height
+
+%type-buttons {
+  @extend %type-interface;
+  @extend %font-bold;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+
+
+// standard red button.
+// all the other button themes are in _themes
+%button, button, .button {
+  @extend %type-buttons;
+  @extend %font-smooth;
+  @extend %ease;
+
+  padding: 0.5px $base;
+
+  // color: $color-button-text;
+  // background: $color-button-bg; 
+  // border: $border-width solid $color-button-border;
+
+  // default
+  &:hover {
+    // background: $color-button-hover-bg; 
+    // border-color: $color-button-hover-bg;
+    @extend %level-0;
+    @extend %ease;
+  }
+
+
+  // a bunch of weird styles
+  &._noBorder {
+    border-color: transparent;
+  }
+
+  &._padding-extra {
+    padding: $base $base*3;
+  }
+  &._padding-wide {
+    padding: 0 $base*3;
+  }
+}
+
+  ._hover-color-red {
+    &:hover {
+      color: $color-red;
+    }
+  }
+
+  ._hover-border-red {
+    &:hover {
+      border-color: $color-red;
+    }
+  }
+
+  ._hover-bg-transparent {
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  .twilight {
+    %button, button, .button {
+      color: $color-twilight-0;
+    }
+  }
+  .moonlight {
+    %button, button, .button {
+      color: $color-blacker;
+    }
+  }
+
+
+

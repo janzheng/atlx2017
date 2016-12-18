@@ -1,0 +1,290 @@
+
+
+
+
+
+// 
+//    TAG POSITIONING
+// 
+
+._block {
+  display: block;
+}
+
+._inline {
+  display: inline;
+}
+
+
+
+// 
+//    DISPLAY STYLES
+// 
+
+._hidden {
+  display: none !important;
+}
+._pointer {
+  cursor: pointer;
+}
+._transparent {
+  opacity: 0.1;
+}
+
+
+// 
+//    HEIGHT
+// 
+._fullWidth {
+  width: 100%;
+}
+
+._fullHeight {
+  width: 100%;
+}
+
+
+
+// 
+//    SPACING, MARGINS, PADDING
+// 
+
+%padding-container-top {
+  padding-top: $base*3;
+}
+%padding-container-bottom {
+  padding-top: $base*3;
+}
+
+%padding-section {
+  // padding: $base*3;
+  padding-bottom: $base*3;
+}
+%margin-section {
+  margin: $base*3 auto;
+}
+
+
+
+// 
+//    MARGIN
+// 
+
+._marginCenter {
+  margin-left: auto;
+  margin-right: auto;
+}
+._marginNone {
+  margin: 0 !important;
+}
+  ._marginTop {
+    margin-top: $base;
+  }
+    ._marginTop_none {
+      margin-top: 0 !important;
+    }
+    ._marginTop_x2 {
+      margin-top: $base*2;
+    }
+
+  ._marginBottom {
+    margin-bottom: $base;
+  }
+    ._marginBottom_none {
+      margin-bottom: 0 !important;
+    }
+    ._marginBottom_x2 {
+      margin-bottom: $base*2;
+    }
+
+  ._marginLeft {
+    margin-left: $base;
+  }
+    ._marginLeft_none {
+      margin-left: 0 !important;
+    }
+
+  ._marginRight {
+    margin-right: $base;
+  }
+    ._marginRight_none {
+      margin-right: 0 !important;
+    }
+
+
+// 
+//    PADDING
+// 
+
+._paddingTopBottom_x2 {
+  padding-top: $base*2;
+  padding-bottom: $base*2;
+}
+._paddingNone {
+  padding: 0 !important;
+}
+  ._padding {
+    padding: $base $base*2;
+  }
+  ._paddingTop {
+    padding-top: $base;
+  }
+    ._paddingTop2 {
+      padding-top: $base*2;
+    }
+    ._paddingTop_half {
+      padding-top: $base/2;
+    }
+    ._paddingTop_none {
+      padding-top: 0;
+    }
+  ._paddingBottom {
+    padding-bottom: $base;
+  }
+    ._paddingBottom_none {
+      padding-bottom: 0;
+    }
+  ._paddingRight {
+    padding-right: $base;
+  }
+    ._paddingRight_none {
+      padding-right: 0;
+    }
+  ._paddingLeft {
+    padding-left: $base;
+  }
+    ._paddingLeft_none {
+      padding-left: 0 !important;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 
+// 
+//    ALIGNMENT 
+// 
+// 
+
+._center {
+  text-align: center;
+}
+._left {
+  text-align: left;
+}
+._right {
+  text-align: right;
+}
+  ._posRight {
+    position: absolute;
+    right: 0;
+  }
+
+
+
+
+// 
+//    SHADOWS
+// 
+
+// %box-shadow, ._box-shadow {
+//   box-shadow: 4px 4px 10px rgba($color-black, 0.32);
+// }
+
+// %box-shadow-none, ._box-shadow-none {
+//   box-shadow: none;
+// }
+
+$shadow_gridbox: 0 3px 15px rgba(0,0,0,0.11), 0 3px 6px rgba(0,0,0,0.43);
+$shadow_gridbox_hover: 0 4px 16px rgba(0,0,0,0.89), 0 10px 10px rgba(0,0,0,0.18);
+$shadow_edge: 0px 5px 14px rgba(0,0,0,1);
+$shadow_edgetop: 0px -6px 12px rgba(0,0,0,0.8);
+
+
+
+
+
+
+
+// 
+// 
+//  "CARDS" / POSITIONING LAYERS
+// 
+// 
+
+// trying out the "card" idea from google
+
+// used for buttons, small cards; "half-step"
+%level-0 {
+  // box-shadow: 4px 4px 5px rgba($color-black, 0.4);
+  @include box-shadow(4px, 4px, 5px, rgba($color-black, 0.4))
+}
+  .card-0, %card-0 {
+    // box-shadow: 5px 5px 9px rgba($color-gray, 0.1);
+    @extend %level-0;
+    padding: $base*2;
+    @extend %max-width;
+  }
+
+// VERY faint effects.
+// level 1 / base level card
+%level-1 {
+  box-shadow: 4px 4px 10px rgba($color-black, 0.32);
+}
+
+
+
+
+
+// prevents double click highlighting
+// use on buttons and text CTAs
+%user-select-none {
+  -webkit-user-select: none; /* Chrome/Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
+}
+
+
+
+
+%hide-scrollbar{
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar { 
+      display: none; 
+   }
+}
+
+
+
+
+
+
+// 
+//    CONTAINERS
+// 
+
+.container {
+  @extend %padding-container-bottom;
+}
+
+

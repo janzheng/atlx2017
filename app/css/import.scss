@@ -1,35 +1,35 @@
 ---
 ---
 
+// react will use this application file, so everything has been moved there
+@import 'application';
 
-// core frameworks 
-@import 'bourbon/bourbon';
-@import "neat/neat-helpers"; // or "neat-helpers" when in Rails
-
-// framework files
-@import "__proto-grid-settings";
-@import '__proto-reset';            // reset formula
-@import 'neat/neat';  
-@import '__proto-framework';        // framework prototype framework. Grids, distances and sizes.
-
-
-
-
-
-
-
-// adding '/' refers to server root, and " " refers to relative root (dropbox would use this)
-// needs to match config.yml, but this is for css-loaded assets
-$siteroot: '../../';
 
 
 // 
-// Main Design
+// FRAMEWORK
 // 
-@import "fluidbox.css";  
-@import 'colors';                 // colors
-@import 'mixins';                 // mixins (relies on colors)
-@import 'settings';               // general settings (relies on mixins, colors)
+
+
+// @import 'bootstrap/bootstrap';
+// // only uses a small amount of bootstrap (grids) and the reason is b/c of later integration w/ React-Bootstrap
+// // - we use the standard bootstrap grid system (8 columns) 
+
+// // @import "__proto-grid-settings";
+// @import '__proto-reset';            // reset formula
+// // @import '__proto-framework';        // framework prototype framework. Grids, distances and sizes.
+
+
+// // 
+// // Main Design
+// // 
+// // @import "fluidbox.css";  
+// @import 'colors';                     // colors
+// @import 'animation';                  // animation mixins separate
+// @import 'mixins';                     // mixins (relies on colors)
+// @import '../fonts/trendsansone/trendsansone.css'; // trend sans one font
+// @import 'typography';                 // general settings (relies on mixins, colors)
+// @import 'z';                          // z-order
 // @import "collapsible";  
 // @import "triangles";  
 
@@ -40,260 +40,172 @@ $siteroot: '../../';
 // @import "timeline";               // timeline used in about
 
 
-
-
-// 
-// CLEARFIX
-// 
-.clearfix:after {
-     visibility: hidden;
-     display: block;
-     font-size: 0;
-     content: " ";
-     clear: both;
-     height: 0;
-     }
-.clearfix { display: inline-block; }
-/* start commented backslash hack \*/
-* html .clearfix { height: 1%; }
-.clearfix { display: block; }
-/* close commented backslash hack */
+// highlight font color
+// @include selection-color (rgba($light-blue, 0.8), white, none);
 
 
 
-
-// 
-// UNIVERSAL STYLES
-// general, reusable styles
-// 
-html {
-  // background-color: $silversky;
-  background-color: $color-bg;
-}
-
-* {
-  // @extend %ease-slow;
-}
-
-body, html {
-  // @extend %ease-slow;
-  @extend %sans-serif;
-  color: $medium-gray;
-  font-size: $base;
-  line-height: $height-p;
-}
-
-
-
-@import "homepage";
+// // 
+// // CLEARFIX
+// // 
+// .clearfix:after {
+//      visibility: hidden;
+//      display: block;
+//      font-size: 0;
+//      content: " ";
+//      clear: both;
+//      height: 0;
+//      }
+// .clearfix { display: inline-block; }
+// /* start commented backslash hack \*/
+// * html .clearfix { height: 1%; }
+// .clearfix { display: block; }
+// /* close commented backslash hack */
 
 
 
 
-// ensures footer is at bottom
-// when content isn't tall enough
-$footer_height: 98px;
+// // 
+// // UNIVERSAL STYLES
+// // general, reusable styles
+// // 
+// html {
+//   // background-color: $silversky;
+//   background-color: $color-bg;
+// }
 
-* {
-  margin: 0;
-}
-html, body {
-  height: 100%;
-}
-.wrapper {
-  // min-height: 100%;
-  // height: auto !important;
-  // height: 100%;
-  // margin: 0 auto $footer_height*-1;
-  background: $color-bg;
-}
+// * {
+//   // @extend %ease-slow;
+// }
+
+// body, html {
+//   // @extend %ease-slow;
+//   @extend %sans-serif;
+//   color: $medium-gray;
+//   font-size: $base;
+//   line-height: $height-p;
+// }
 
 
-.main__footer {
-  height: $footer_height;
-  @extend %serif;
-  text-align: center;
-  font-size: $size-footer;
-  font-weight: 300;
-  padding: $base;// * 2;
-  a:hover { text-decoration: underline; }
-  // margin-top: $base * 5;
-  // @extend %background;
-  color: $medium-gray;
-}
-  .footer-email {
-    font-weight: 300;
-    font-size: $base * 2;
-    letter-spacing: 1.2px;
-    text-decoration: none;
-    line-height: 64px;
-    color: $color-teal;
-    @extend %ease;
-    &:hover {
-      @extend %ease;
-      color: $color-purple;
-    }
-  }
-  .main__footer__slope {
-    .slope-content {
-      padding-top: $base*2;
-      padding-bottom: $base;
-    }
 
-    .slope-negThreeInverse {
-      background-color: $color-bg;
-      padding-bottom: $base * 2;
-    }
-  }
+// @import "homepage";
 
 
 
 
+// // ensures footer is at bottom
+// // when content isn't tall enough
+// $footer_height: 98px;
+
+// * {
+//   margin: 0;
+// }
+// html, body {
+//   height: 100%;
+// }
+// .wrapper {
+//   // min-height: 100%;
+//   // height: auto !important;
+//   // height: 100%;
+//   // margin: 0 auto $footer_height*-1;
+//   background: $color-bg;
+// }
 
 
-// iterum basic
+// .main__footer {
+//   height: $footer_height;
+//   @extend %serif;
+//   text-align: center;
+//   font-size: $size-footer;
+//   font-weight: 300;
+//   padding: $base;// * 2;
+//   a:hover { text-decoration: underline; }
+//   // margin-top: $base * 5;
+//   // @extend %background;
+//   color: $medium-gray;
+// }
+//   .footer-email {
+//     font-weight: 300;
+//     font-size: $base * 2;
+//     letter-spacing: 1.2px;
+//     text-decoration: none;
+//     line-height: 64px;
+//     color: $color-teal;
+//     @extend %ease;
+//     &:hover {
+//       @extend %ease;
+//       color: $color-purple;
+//     }
+//   }
+//   .main__footer__slope {
+//     .slope-content {
+//       padding-top: $base*2;
+//       padding-bottom: $base;
+//     }
 
-
-// slope mechanism
-
-$slope_left: -10%;
-.slope-wrapper {
-  overflow: hidden;
-  // background: $color-black;
-  width: 100%;
-}
-.slope-container {
-  display: block;
-  overflow: hidden;
-
-  // width: 150%;
-  // left: $slope_left;
-  position: relative;
-}
-  .slope-content {
-    margin: 0 auto;
-    position: relative;
-    // left: $slope_left * -1;
-    // padding-top: 100px;
-    text-align: center;
-  }
-    // retains the slope at top and bottom
-    .slope-frame-container {
-      overflow: hidden;
-      padding-top: 100px;
-      padding-bottom: 100px;
-    }
-    .slope-frame {
-      margin-top: -100px;
-      margin-bottom: -100px;
-    }
-  .slope-negThree {
-    @include slope(-1.5deg);
-    // height: 600px;
-    // background: green;
-    margin-left: -50px;
-    margin-right: -50px;
-    overflow: hidden;
-    padding-bottom: 60px;
-  }
-    .slope-negThreeInverse {
-      @include slopeNeg(-1.5deg);
-      // height: 600px;
-      // background: green;
-      margin-left: -50px;
-      margin-right: -50px;
-      overflow: hidden;
-      // padding-bottom: 60px;
-    }
-  .slope-negSix {
-    @include slope(-2.5deg);
-    // height: 600px;
-    // background: green;
-    margin-left: -50px;
-    margin-right: -50px;
-    overflow: hidden;
-    padding-bottom: 60px;
-  }
-
-
-  // layout
-
-  ._subSection, %subSection, .row, %row {
-    @include span-four(24, 24, 24, 24);
-    padding-bottom: $base*4;
-  }
-  .section-half {
-    @include span-four(24, 12, 12, 12);
-
-    &:first-of-type {
-      padding-right: $base*2;
-    }
-    &:last-of-type {
-      padding-left: $base*2;
-    }
-  }
-  .section-third {
-    @include span-four(24, 8, 8, 8);
-  }
-
-
-// whitespacers
-
-.roomy-vertical {
-  padding-top: $base;
-  padding-bottom: $base*2;
-}
-  
-
-
-// typography
-
-.justify {
-  text-align: justify;
-}
-
-
-
-
-section {
-  @extend %background;
-}
-
-._content {
-  margin: 0 $base*6;
-  // @include span-four(24, 16, 16, 16);
-}
-
-._windowHeight {
-  overflow: hidden;
-}
-
-._parallax {
-  position: relative;
-}
+//     .slope-negThreeInverse {
+//       background-color: $color-bg;
+//       padding-bottom: $base * 2;
+//     }
+//   }
 
 
 
 
 
 
+// // typography
 
-// menu
+// .justify {
+//   text-align: justify;
+// }
 
-.menu {
-  position: fixed;
-  width: 100%;
-  top: 24px;
-  z-index: $z-top + 1;
 
-  .menu--right {
-    float: right;
-  }
-  & > span {
-    width: 45%;
-    display: inline-block;
-    position: relative;
-    text-align: center;
-  }
-}
+
+
+// section {
+//   @extend %background;
+// }
+
+// ._content {
+//   margin: 0 $base*6;
+//   // @include span-four(24, 16, 16, 16);
+// }
+
+// ._windowHeight {
+//   overflow: hidden;
+// }
+
+// ._parallax {
+//   position: relative;
+// }
+
+
+
+
+
+
+// %no-float {
+//   float: none !important;
+// }
+
+
+// // menu
+
+// .menu {
+//   position: fixed;
+//   width: 100%;
+//   top: 24px;
+//   z-index: $z-top + 1;
+
+//   .menu--right {
+//     float: right;
+//   }
+//   & > span {
+//     width: 45%;
+//     display: inline-block;
+//     position: relative;
+//     text-align: center;
+//   }
+// }
 

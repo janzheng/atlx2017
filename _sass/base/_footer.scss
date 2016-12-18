@@ -1,0 +1,20 @@
+
+
+// ensures footer is at bottom
+// when content isn't tall enough
+$footer_height: 110px + 24px; //24px is extra padding
+
+html, body {
+  height: 100%;
+}
+._wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto $footer_height*-1;
+  background: $color-bg;
+}
+._footer {
+  height: $footer_height;
+  background: $color-bg;
+}

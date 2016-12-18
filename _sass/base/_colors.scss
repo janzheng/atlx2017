@@ -1,0 +1,163 @@
+
+//    COLORS
+//    all colors are defined here
+//    contextual themed colors are in _themes
+
+// 
+//    ATLX THEME COLORS
+//
+$color-silver: #F7F7F7;           .color-silver { color: $color-silver; }               .color-bg-silver { background: $color-silver; }
+$color-silver-dark: #CCCCCC;      .color-silver-dark { color: $color-silver-dark; }     .color-bg-silver-dark { background: $color-silver-dark; }
+$color-yellow: #FFFAD0;           .color-yellow { color: $color-yellow; }               .color-bg-yellow { background: $color-yellow; }
+$color-purple: #9B69A6;           .color-purple { color: $color-purple; }               .color-bg-purple { background: $color-purple; }
+$color-blue-dark: #5D8EF2;        .color-blue-dark { color: $color-blue-dark; }         .color-bg-blue-dark { background: $color-blue-dark; }
+$color-blue: #7ECDF8;             .color-blue { color: $color-blue; }                   .color-bg-blue { background: $color-blue; }
+$color-blue-light: $color-blue;   .color-blue-light { color: $color-blue-light; }       .color-bg-blue-light { background: $color-blue-light; }
+$color-orange: #F1B846;           .color-orange { color: $color-orange; }               .color-bg-orange { background: $color-orange; }
+$color-red: #BD5843;              .color-red { color: $color-red; }                     .color-bg-red { background: $color-red; }
+$color-green: #D0E887;            .color-green { color: $color-green; }                 .color-bg-green { background: $color-green; }
+$color-mint: #31E3C3;             .color-mint { color: $color-mint; }                   .color-bg-mint { background: $color-mint; }
+$color-gray: #666666;             .color-gray { color: $color-gray; }                   .color-bg-gray { background: $color-gray; }
+$color-black: #333333;            .color-black { color: $color-black; }                 .color-bg-black { background: $color-black; } // used to be #1A1A1A, lightening it up a bit
+
+// #old green: #ABDE72
+
+// darker colors
+// dark red? for high contrast? 8e4132
+
+
+// color effects
+@function getHoverColor($color) {
+    @return darken($color, 12%);
+}
+
+
+
+// 
+//    SUPPORTING COLORS
+// 
+$color-blacker: #1A1A1A;          .color-blacker { color: $color-blacker; }             .color-bg-blacker { background: $color-blacker; } // needed to contrast gray bgs
+$color-gray-lightest: #AAA;       .color-gray-lightest { color: $color-gray-lightest; } .color-bg-gray-lightest { background: $color-gray-lightest; }
+$color-gray-light: #888;          .color-gray-light { color: $color-gray-light; }       .color-bg-gray-light { background: $color-gray-light; }
+
+$color-pureblack: #111;           .color-pureblack { color: $color-pureblack; }       .color-bg-pureblack { background: $color-pureblack; }
+$color-white: #FAFAFA;            .color-white { color: $color-white; }               .color-bg-white { background: $color-white; }
+$color-whiter: #FCFCFC;           .color-whiter { color: $color-whiter; }             .color-bg-whiter { background: $color-whiter; }
+$color-purewhite: #fff;           .color-purewhite { color: $color-purewhite; }       .color-bg-purewhite { background: $color-purewhite; }
+
+$color-facebook: #3B5998;
+$color-google: #E93F2E;
+$color-reddit: #8BBBE3;
+$color-twitter: #26C4F1;
+
+
+
+
+// 
+//    TWILIGHT COLORS
+// 
+
+$color-twilight-0: #8AADC3;         .color-twilight-0 { color: $color-twilight-0; }       .color-bg-twilight-0 { background: $color-twilight-0; }
+$color-twilight-1: #354656;         .color-twilight-1 { color: $color-twilight-1; }       .color-bg-twilight-1 { background: $color-twilight-1; }
+$color-twilight-2: #27323C;         .color-twilight-2 { color: $color-twilight-2; }       .color-bg-twilight-2 { background: $color-twilight-2; }
+$color-twilight-3: #1C2237;         .color-twilight-3 { color: $color-twilight-3; }       .color-bg-twilight-3 { background: $color-twilight-3; }
+$color-twilight-4: #181A20;         .color-twilight-4 { color: $color-twilight-4; }       .color-bg-twilight-4 { background: $color-twilight-4; }
+$color-twilight-5: #CFEEFF;         .color-twilight-5 { color: $color-twilight-5; }       .color-bg-twilight-5 { background: $color-twilight-5; }
+$color-sand:    #B0A660;            .color-sand { color: $color-sand; }                   .color-bg-sand { background: $color-sand; }
+
+
+
+// 
+//    MOONLIGHT / NIGHT COLORS
+// 
+$color-moonlight-1: #000;                .color-moonlight-1 { color: $color-moonlight-1; }             .color-bg-moonlight-1 { background: $color-moonlight-1; }
+$color-moonlight-2: #101113;             .color-moonlight-2 { color: $color-moonlight-2; }             .color-bg-moonlight-2 { background: $color-moonlight-2; }
+
+
+
+
+// 
+//    ATLX COLORS
+// 
+$color-burnt:   #D05821;            .color-burnt { color: $color-burnt; }                 .color-bg-burnt { background: $color-burnt; }
+$color-paper:   #FFF0D8;            .color-paper { color: $color-paper; }                   .color-bg-paper { background: $color-paper; }
+$color-red:     #AB2711;            .color-red { color: $color-red; }                     .color-bg-red { background: $color-red; }
+
+
+
+
+
+/* 
+
+$color_bg: $color_gray-vdark;
+$color_text: $color_gray-light;
+$color_text_dark: $color_gray-dark;
+
+$color-link: $color_yellow;
+  $color-link_dark: $color_gray-vdark;
+$color-link_hover: $color_yellow-dark;
+  $color-link_dark_hover: $color_gray;
+
+$color_nav: $color_pureblack;
+$color_nav_text: $color_gray-light;//$color_yellow;
+$color_nav_text_hover: $color_yellow;
+$color_nav_mobile: $color_gray-dark;
+
+$post_text: $color_gray;
+$post_bg: $color_gray-vvdark;
+$post_text_urgent: $color_gray-vvdark;
+$post_bg_urgent: $color_yellow-dark;
+
+$color_gridbox: $color_gray-vvdark;
+$color_gridtext: $color_gray-vvlight;
+  $color_gridtext_hover: $color_gridbox;
+$color_gridtext_dark: $color_gray;
+$color_gridhighlight: $color_yellow;
+$color_gridtext_highlight: $color_black;
+
+$color_highlight: $color_yellow;
+$color_highlighttext: $color_gray-vvdark;
+
+$color_dropdown_text: $color_gridtext;
+
+$color_dropdown_bg: $color_gridbox;
+$color_dropdown_bg_focus: $color_dropdown_bg;
+$color_dropdown_bg_hover: $color_gridbox;
+
+$color_dropdown_border: $color_gray-dark;
+$color_dropdown_border_hover: $color_yellow;
+
+$color_dropdown_active_border: $color_yellow;
+$color_dropdown_active_bg: $color_yellow;
+$color_dropdown_active_text: $color_gridbox;
+$color_dropdown_open_text: $color_yellow;
+
+$color_dropdownmenu_active_text: $color_gridbox;
+$color_dropdownmenu_active_bg: $color_yellow;
+$color_dropdownmenu_border: $color_yellow;
+$color_dropdownmenu_bg: $color_bg;
+$color_dropdownmenu_text: $color_gridtext;
+$color_dropdownmenu_text_hover: $color_gray-vvvdark;
+$color_dropdownmenu_bg_hover: $color_yellow;
+
+$color_sidebar: $color_gray-light;
+$color_sidebar_empty: $color_gray-dark;
+
+$color_removefilter_text: $color_gridtext;
+$color_removefilter_bg: $color_gridbox;
+$color_removefilter_border: $color_gridbox;
+$color_removefilter_border_hover: $color_yellow;
+
+$color_product_brands: $color_gray-light;
+$color_product_title: $color_gray-vlight;
+$color_product_box_bg: $color_gray-vldark;
+$color_product_box_text: $color_gray-vlight;
+$color_product_tag_bg: $color_product_box_bg;
+$color_product_tag_text: $color_product_box_text;
+$color_product_box_highlight_bg: $color_gray-vvdark;
+$color_product_box_highlight_text: $color_gray-vlight;
+
+$color_form_bg: $color_gray-dark;
+$color_form_text: $color_white;
+$color_form_border: $color_gray-light;
+ */

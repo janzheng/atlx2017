@@ -1,0 +1,38 @@
+
+
+
+
+
+// 
+//  HOMEPAGE
+// 
+
+
+
+    // 
+    //  LOGO
+    // 
+    .page-home--logo {
+      @extend %padding-container-top;
+      text-align: center;
+    }
+    .page-home--logo-img {
+      margin-right: $base*2;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .page-home--logo-type {
+      display: inline-block;
+      vertical-align: middle;
+      text-align: left;
+    }
+
+
+
+    // Body (temporary)
+
+    .page-home--hero {
+      @extend %padding-container-top;
+      text-align: center;
+      // @extend %h1-display;
+    }
