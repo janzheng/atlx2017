@@ -141,6 +141,18 @@
   ._paddingBottom {
     padding-bottom: $base;
   }
+    ._paddingBottom-xs {
+      @media (max-width: $width_sm_max) {
+        padding-bottom: $base !important;
+      }
+    }
+
+      ._paddingBottom-three-xs {
+        @media (max-width: $width_sm_max) {
+          padding-bottom: $base*3 !important;
+        }
+      }
+
     ._paddingBottom_none {
       padding-bottom: 0;
     }
@@ -185,6 +197,11 @@
 ._center {
   text-align: center;
 }
+  ._center-xs {
+    @media (max-width: $width_sm_max) {
+      text-align: center !important;
+    }
+  }
 ._left {
   text-align: left;
 }

@@ -135,7 +135,8 @@
   h1.display, %h1-display {
     @extend %font-display;
     font-size: $base*3;
-    line-height: $base*3 +6px;
+    // line-height: $base*3 +6px;
+    line-height: $base*3;
     letter-spacing: -4px;
     // @extend %font-bold;
     // @extend %font-sans;
