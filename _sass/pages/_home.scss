@@ -18,6 +18,10 @@
       position: relative;
       z-index: 100;
       padding-top: $base * 9;
+
+      @include screen-xs {
+        padding-top: $base * 3/2;
+      }
     }
       .page-home--logo-container {
         height: $logo-height;
@@ -26,6 +30,7 @@
         display: block;
         background-image: url(/app/images/hj_bg.png);
         background-size: cover;
+        background-position: center -50px;
         // background-color: red;
         width: 100%;
         height: $logo-height;
@@ -38,6 +43,11 @@
       margin-right: $base*2;
       display: inline-block;
       vertical-align: middle;
+
+      @include screen-xs {
+        display: block;
+        padding-bottom: $base*2;
+      }
     }
     .page-home--logo-type {
       display: inline-block;

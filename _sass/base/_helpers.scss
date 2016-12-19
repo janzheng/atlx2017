@@ -148,8 +148,8 @@
     }
 
       ._paddingBottom-three-xs {
-        @media (max-width: $width_sm_max) {
-          padding-bottom: $base*3 !important;
+        @include screen-xs {
+          padding-bottom: $base*3;
         }
       }
 

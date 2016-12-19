@@ -85,11 +85,16 @@ $width_lg_min: 1200px !default;
 //      }
 // 
 
-@mixin screen-mobile-only {
+@mixin screen-xs-only {
   @media (max-width: $width_xs_max) {
     @content;
   }
 }
+  @mixin screen-xs {
+    @include screen-xs-only {
+      @content
+    }
+  }
 
 // below 'magic' point
 @mixin screen-magic-down {
@@ -105,36 +110,36 @@ $width_lg_min: 1200px !default;
   }
 
 // tablet and bigger
-@mixin screen-tablet {
+@mixin screen-sm {
   @media (min-width: $width_sm_min) {
     @content;
   }
 }
   // tablet and smaller
-  @mixin screen-tablet-down {
+  @mixin screen-sm-down {
     @media (min-width: $width_xs_min) and (max-width: $width_sm_max){
       @content;
     }
   }
-  @mixin screen-tablet-only {
+  @mixin screen-sm-only {
     @media (min-width: $width_sm_min) and (max-width: $width_sm_max){
       @content;
     }
   }
 
 // desktop and bigger
-@mixin screen-desktop {
+@mixin screen-md {
   @media (min-width: $width_md_min) {
     @content;
   }
 }
   // desktop and smaller
-  @mixin screen-desktop-down {
+  @mixin screen-md-down {
     @media (min-width: $width_xs_min) and (max-width: $width_md_max){
       @content;
     }
   }
-  @mixin screen-desktop-only {
+  @mixin screen-md-only {
     @media (min-width: $width_md_min) and (max-width: $width_md_max){
       @content;
     }
@@ -142,7 +147,7 @@ $width_lg_min: 1200px !default;
 
 // wide (and up)
 // wide and smaller would just be everything
-@mixin screen-wide {
+@mixin screen-lg {
   @media (min-width: $width_lg_min) {
     @content;
   }
@@ -344,14 +349,14 @@ $max-widest: $width_lg_min;
 
 %max-responsive-padding {
   // padding, dynamic width on tablet
-  @include screen-tablet-down {
+  @include screen-md-down {
     padding-left: $base*2;
     padding-right: $base*2;
     max-width: 100%;
   }
 }
   %responsive-padding {
-    @include screen-tablet-down {
+    @include screen-md-down {
       padding-left: $base*2;
       padding-right: $base*2;
     }
@@ -368,7 +373,7 @@ $max-widest: $width_lg_min;
   @extend %max-responsive-padding;
   max-width: $max-width;
 
-  @include screen-tablet-down {
+  @include screen-md-down {
     max-width: $max-width - $base*4;
   }
 }
@@ -377,7 +382,7 @@ $max-widest: $width_lg_min;
   @extend %max-responsive-padding;
   max-width: $max-container-width;
 
-  @include screen-tablet-down {
+  @include screen-md-down {
     max-width: $max-container-width-smaller;
   }
 
