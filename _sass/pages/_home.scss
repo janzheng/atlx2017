@@ -12,10 +12,28 @@
     // 
     //  LOGO
     // 
+    $logo-height: 450px;
     .page-home--logo {
-      @extend %padding-container-top;
       text-align: center;
+      position: relative;
+      z-index: 100;
+      padding-top: $base * 9;
     }
+      .page-home--logo-container {
+        height: $logo-height;
+      }
+      .page-home--logo-bg {
+        display: block;
+        background-image: url(/app/images/hj_bg.png);
+        background-size: cover;
+        // background-color: red;
+        width: 100%;
+        height: $logo-height;
+        position: absolute;
+        top: 0;
+        z-index: 0;
+        opacity: 0.15;
+      }
     .page-home--logo-img {
       margin-right: $base*2;
       display: inline-block;
@@ -38,3 +56,6 @@
       text-align: center;
       // @extend %h1-display;
     }
+
+
+

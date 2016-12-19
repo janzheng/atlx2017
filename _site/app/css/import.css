@@ -2421,7 +2421,7 @@ html, body {
   width: 100%;
 }
 
-.page-home--logo, .page-home--hero {
+.page-home--hero {
   padding-top: 48px;
 }
 
@@ -2580,20 +2580,42 @@ html, body {
   padding: 32px;
 }
 
-._border-light {
+._border-thin, ._border-thick {
   padding: 0;
   border: none;
-  border-top: medium double #333;
-  color: #333;
+  color: #333333;
   text-align: center;
 }
 
-._border-light {
+._border-thin {
   border-top: 2px solid #333333;
+}
+
+._border-thick {
+  border-top: 6px solid #333333;
 }
 
 .page-home--logo {
   text-align: center;
+  position: relative;
+  z-index: 100;
+  padding-top: 144px;
+}
+
+.page-home--logo-container {
+  height: 450px;
+}
+
+.page-home--logo-bg {
+  display: block;
+  background-image: url(/app/images/hj_bg.png);
+  background-size: cover;
+  width: 100%;
+  height: 450px;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  opacity: 0.15;
 }
 
 .page-home--logo-img {

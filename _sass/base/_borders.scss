@@ -1,14 +1,23 @@
 
 
+$border-thin: 2px;
+$border-thick: 6px;
+
 %border-base {
   padding: 0;
   border: none;
-  border-top: medium double #333;
-  color: #333;
+  // border-top: medium double $color-black;
+  color: $color-black;
   text-align: center;
 }
 
-._border-light {
+
+._border-thin {
   @extend %border-base;
-  border-top: 2px solid $color-black;
+  border-top: $border-thin solid $color-black;
+}
+
+._border-thick {
+  @extend %border-base;
+  border-top: $border-thick solid $color-black;
 }
