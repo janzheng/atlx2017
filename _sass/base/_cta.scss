@@ -1,0 +1,70 @@
+
+
+// 
+//  CTAs are super large buttons
+// 
+
+// colors and styling is in _themes
+
+// follows the $base (21px) vertical rhythm, so should always be a multiple of 21
+// border, padding, line-height, and text size all affect height
+
+%cta {
+  @extend %font-sans;
+  cursor: pointer;
+  @extend %ease;
+}
+  %cta-main {
+    @extend %font-bold;
+    text-transform: uppercase;
+  }
+  %cta-desc {
+
+  }
+
+
+
+// standard red button.
+// all the other button themes are in _themes
+._cta {
+  @extend %cta;
+  @extend %font-smooth;
+  @extend %ease;
+
+  padding: $base;
+  padding-left: 0;
+  // border: $border-width solid $color-button-border;
+
+  ._cta-content-container {
+    padding: 3px;
+    border: 4px solid $color-red;
+    @extend %ease;
+  }
+  ._cta-content {
+    // color: $color-button-text;
+    // background: $color-button-bg; 
+    padding: $base;
+    @extend %ease;
+  }
+    ._cta-main {
+      @extend h3;
+    }
+
+
+  // default
+  &:hover {
+    ._cta-content,
+    ._cta-content-container {
+      @extend %ease;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+

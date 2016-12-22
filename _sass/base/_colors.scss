@@ -10,9 +10,9 @@ $color-silver: #F7F7F7;           .color-silver { color: $color-silver; }       
 $color-silver-dark: #CCCCCC;      .color-silver-dark { color: $color-silver-dark; }     .color-bg-silver-dark { background: $color-silver-dark; }
 $color-yellow: #FFFAD0;           .color-yellow { color: $color-yellow; }               .color-bg-yellow { background: $color-yellow; }
 $color-purple: #9B69A6;           .color-purple { color: $color-purple; }               .color-bg-purple { background: $color-purple; }
-$color-blue-dark: #5D8EF2;        .color-blue-dark { color: $color-blue-dark; }         .color-bg-blue-dark { background: $color-blue-dark; }
-$color-blue: #7ECDF8;             .color-blue { color: $color-blue; }                   .color-bg-blue { background: $color-blue; }
-$color-blue-light: $color-blue;   .color-blue-light { color: $color-blue-light; }       .color-bg-blue-light { background: $color-blue-light; }
+// $color-blue-dark: #5D8EF2;        .color-blue-dark { color: $color-blue-dark; }         .color-bg-blue-dark { background: $color-blue-dark; }
+// $color-blue: #7ECDF8;             .color-blue { color: $color-blue; }                   .color-bg-blue { background: $color-blue; }
+$color-blue-light: #7ECDF8;   .color-blue-light { color: $color-blue-light; }       .color-bg-blue-light { background: $color-blue-light; }
 $color-orange: #F1B846;           .color-orange { color: $color-orange; }               .color-bg-orange { background: $color-orange; }
 $color-red: #BD5843;              .color-red { color: $color-red; }                     .color-bg-red { background: $color-red; }
 $color-green: #D0E887;            .color-green { color: $color-green; }                 .color-bg-green { background: $color-green; }
@@ -30,6 +30,10 @@ $color-black: #333333;            .color-black { color: $color-black; }         
 @function getHoverColor($color) {
     @return darken($color, 12%);
 }
+@function getHoverColorLight($color) {
+    @return lighten($color, 7%);
+}
+
 
 
 
@@ -80,9 +84,9 @@ $color-moonlight-2: #101113;             .color-moonlight-2 { color: $color-moon
 //    ATLX COLORS
 // 
 $color-burnt:   #D05821;            .color-burnt { color: $color-burnt; }                 .color-bg-burnt { background: $color-burnt; }
-$color-paper:   #FFF0D8;            .color-paper { color: $color-paper; }                   .color-bg-paper { background: $color-paper; }
+$color-paper:   #FFF0D8;            .color-paper { color: $color-paper; }                 .color-bg-paper { background: $color-paper; }
 $color-red:     #AB2711;            .color-red { color: $color-red; }                     .color-bg-red { background: $color-red; }
-
+$color-blue:    #437EBB;            .color-blue { color: $color-blue; }                   .color-bg-blue { background: $color-blue; }
 
 
 

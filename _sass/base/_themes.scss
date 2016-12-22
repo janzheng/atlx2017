@@ -6,19 +6,12 @@
 // 
 // 
 
-  $color-novelmonkey: $color_red;
-
 
   // links
   $color-link: $color-red;
   $color-link-hover: getHoverColor($color-red); // $color-red;
   $color-link-underline: getHoverColor($color-red);
 
-  // buttons
-  $color-button-text: $color-yellow;
-  $color-button-bg: $color-red;
-  $color-button-hover-bg: getHoverColor($color-red);
-  $color-button-border: $color-red;
 
   // inputs
   $color-input-border: $color-gray-light;
@@ -30,11 +23,14 @@
   $color-highlight: $color-red;
 
 
-  // 
-  // 
-  // PAGE BASED COLORS
-  // 
-  // 
+  // buttons
+  $color-button-text: $color-yellow;
+  $color-button-bg: $color-red;
+  $color-button-hover-bg: getHoverColor($color-red);
+  $color-button-border: $color-red;
+  
+  // CTAs
+
 
   // Loading
   $color-loading-bg: $color-yellow;
@@ -56,123 +52,72 @@
   $color-nav-bg: $color-yellow; //$color-silver;
 
 
+  // errors and warnings
+  $color-warning: $color-red;
 
 
 
 
-/*
-  
-    DAYLIGHT MODE
-    / DEFAULT (day) CONTEXTUAL COLORS
+// 
+//    Interactive CTA Themes
+// 
 
-*/
+// bg:    red
+// text:  paper
+// hover: light-red
+$color-cta-bg:              $color-red;
+$color-cta-text:            $color-paper;
+$color-cta-hover-bg:        getHoverColorLight($color-red);
 
-  // theme-button-red
-  //   bg: red
-  //   text: yellow
-  //   hover-bg: dark-red
-  //   border: dark-red
-  //   active-text: white – special case for login
-  //   active-border: red
-  %theme-button-red, ._theme-button-red {
-    background-color: $color-red;
-    color: $color-yellow;
-    border: $border-width solid $color-button-border;
-    &:hover {
-      background-color: getHoverColor($color-red);
-      border-color: $color-button-hover-bg;
-    }
-  }
+// bg:    black
+// text:  paper
+// hover: lighter lack
+$color-cta-two-bg:          $color-black;
+$color-cta-two-text:        $color-paper;
+$color-cta-two-hover-bg:    getHoverColorLight($color-black);
 
-  %theme-button-red_yellow, ._theme-button-red_yellow {
-    background-color: $color-red;
-    color: $color-yellow;
-    border: $border-width solid $color-yellow;
-    &:hover {
-      background-color: getHoverColor($color-red);
-      border: $border-width solid getHoverColor($color-yellow);
-    }
-  }
+// bg:    light-gray
+// text:  pure white
+// hover: darker black
+$color-cta-three-bg:        $color-gray-light;
+$color-cta-three-text:      $color-purewhite;
+$color-cta-three-hover-bg:  getHoverColor($color-gray-light);
 
-  %theme-button-red_black, ._theme-button-red_black {
-    background-color: $color-red;
-    color: $color-blacker;
-    border: $border-width solid $color-red;
-    &:hover {
-      background-color: getHoverColor($color-red);
-      border: $border-width solid getHoverColor($color-red);
-    }
-  }
-
-  %theme-button-transparent_white, ._theme-button-transparent_white {
-    background-color: transparent;
-    border-color: transparent;
-    color: $color-red;
-
-    &:hover {
-      // background-color: getHoverColor($color-red);
-      color: $color-white;
-      border: $border-width solid getHoverColor($color-red);
-    }
-  }
+// bg:    burnt
+// text:  pure white
+// hover: darker burnt
+$color-cta-four-bg:        $color-burnt;
+$color-cta-four-text:      $color-purewhite;
+$color-cta-four-hover-bg:  getHoverColor($color-burnt);
 
 
 
 
-  // theme-button-silver
-  //   bg: silver
-  //   text: red
-  //   hover-bg: red
-  //   hover-text: silver
-  %theme-button-silver,  {
-    background-color: $color-silver;
-    border: $border-width solid $color-silver;
-    color: $color-red;
-    &:hover {
-      background-color: getHoverColor($color-red);
-      border-color: getHoverColor($color-red);
-      color: $color-silver;
-    }
-  }
-
-  // theme-button-blacker
-  //   bg: blacker
-  //   text: gray
-  //   hover-bg: red
-  //   hover-text: blacker
-  %theme-button-blacker,  {
-    background-color: $color-moonlight-2;
-    border: $border-width solid $color-moonlight-2;
-    color: $color-gray;
-    &:hover {
-      background-color: getHoverColor($color-red);
-      border-color: getHoverColor($color-red);
-      color: $color-blacker;
-    }
-  }
 
   // theme-input-silver
-  //   bg: silver
+  //   bg: paper
   //   placeholder-text: light gray
   //   border: dark gray
   //   border-focus: red half-opacity
-  %theme-input-silver, ._theme-input-silver {
-    background-color: $color-silver;
+  %theme-input-paper, ._theme-input-paper {
+    background-color: $color-paper;
     color: $color-black;
     @extend %ease;
     @include input-placeholder {
-      color: $color-gray;
+      color: $color-silver-dark;
+      @extend %font-light;
+      font-weight: 300 !important;
     }
     border: $border-width solid rgba($color-gray, 1);
     &:focus {
       @extend %ease;
-      border-color: rgba($color-red, 1);
-      outline: rgba($color-red, 0.5);
+      border-color: rgba($color-blue, 1);
+      outline: rgba($color-blue, 0.5);
     }
   }
 
   %theme-input-transparent, ._theme-input-transparent {
-    @extend %theme-input-silver;
+    @extend %theme-input-paper;
     color: $color-silver;
     background-color: transparent;
   }
@@ -232,134 +177,160 @@
   }
 
 
-  // 
-  //    THEMES
-  // 
 
-  // theme 1
-  // home / main page
-  //   bg: yellow
-  //   text: black
-  //   link: red
-  //   link-hover: hover-red
-  //   button: %theme-button-red
-  //   subtitle text: black
-  $color-bg1: $color-yellow;
-  $color-text1: $color-black;
-  %theme-section-1, ._theme-section-1 {
-    background: $color-bg1;
-    color: $color-text1;
 
-    @extend %theme-link-red;
-    // @extend %theme-button-red;
 
-    ._subtitle {
-      color: $color-black;
+// 
+// CTAs 
+// (larger buttons)
+// 
+
+._cta {
+  ._cta-content-container {
+    border-color: $color-cta-bg;
+  }
+  ._cta-content {
+    color: $color-button-text;
+    background: $color-cta-bg;
+  }
+  &:hover {
+    ._cta-content {
+      background: $color-cta-hover-bg; 
+    }
+    ._cta-content-container {
+      border-color: $color-cta-hover-bg;
+    }
+  }
+}
+
+  ._cta-2 {
+    ._cta-content-container {
+      border-color: $color-cta-two-bg !important;
+    }
+    ._cta-content {
+      color: $color-cta-two-text;
+      background: $color-cta-two-bg;
+    }
+    &:hover {
+      ._cta-content {
+        background: $color-cta-two-hover-bg; 
+      }
+      ._cta-content-container {
+        border-color: $color-cta-two-hover-bg !important;
+      }
     }
   }
 
-
-  // theme 2
-  // join us for free
-  //   bg: red
-  //   text: yellow
-  //   highlight: orange
-  //   link: orange
-  //   link-hover: white
-  //   button:
-  //   anti-aliased
-
-  $color-bg2: $color-red;
-  $color-text2: $color-yellow;
-  // home / main page
-  %theme-section-2, ._theme-section-2 {
-    background: $color-bg2;
-    color: $color-text2;
-
-    @extend %theme-link-dark;
-  }
-
-
-  // theme 3
-  // help us help you / card
-  //   bg: white
-  //   text: black
-  //   highlight: red
-  //   link: red
-  //   link-hover: hover-red
-
-  //   button: red
-  //   button-text: yellow
-  //   button-border: red
-  //   button-hover: hover-red
-
-  //   input: gray
-  //   input-focus: red
-
-  $color-bg3: $color-white;
-  $color-text3: $color-black;
-
-  %theme-section-3, ._theme-section-3 {
-    background: $color-bg3;
-    color: $color-text3;
-
-    // @extend %theme-link-red;
-    button, .button {
-      @extend %theme-button-red;
+  ._cta-3 {
+    ._cta-content-container {
+      border-color: $color-cta-three-bg !important;
+    }
+    ._cta-content {
+      color: $color-cta-three-text;
+      background: $color-cta-three-bg;
+    }
+    &:hover {
+      ._cta-content {
+        background: $color-cta-three-hover-bg; 
+      }
+      ._cta-content-container {
+        border-color: $color-cta-three-hover-bg !important;
+      }
     }
   }
 
-
-  // theme 4
-  // footer, novel-section
-  //   bg: silver
-  //   text: black
-  //   subtitle: gray (888)
-  //   highlight: red
-  //   link: red
-  //   link-hover: hover-red 2px border-bottom 
-
-  $color-bg4: $color-silver;
-  $color-text4: $color-black;
-
-  %theme-section-4, ._theme-section-4 {
-    background: $color-bg4;
-    color: $color-text4;
-
-    // @extend %theme-link-red;
-    button, .button {
-      @extend %theme-button-red;
+  ._cta-4 {
+    ._cta-content-container {
+      border-color: $color-cta-four-bg !important;
+    }
+    ._cta-content {
+      color: $color-cta-four-text;
+      background: $color-cta-four-bg;
+    }
+    &:hover {
+      ._cta-content {
+        background: $color-cta-four-hover-bg; 
+      }
+      ._cta-content-container {
+        border-color: $color-cta-four-hover-bg !important;
+      }
     }
   }
 
 
 
-  // theme 5
-  // new user block
-  //   bg: green
-  //   text: black
-  //   highlight: red
-  //   link: red
-  //   link-hover: red
-    
-  //   button: red
-  //   button-border: 
-  //   button-text: yellow
 
-  $color-bg5: $color-green;
-  $color-text5: $color-black;
 
-  %theme-section-5, ._theme-section-5 {
-    background: $color-bg5;
-    color: $color-text5;
+// 
+// Buttons
+// 
 
-    @extend %theme-link-red;
+._button {
+  background: $color-cta-bg;
+  color: $color-cta-text;
+  &:hover {
+    background: $color-cta-hover-bg; 
+    color: $color-cta-text;
+  }
+  &._button-noBorder {
+    color: $color-cta-bg;
+    border-color: $color-cta-bg;
+    &:hover {
+      color: $color-paper;
+      border-color: $color-cta-hover-bg;
+    }
+  }
+}
+  ._button-2 {
+    background: $color-cta-two-bg;
+    color: $color-cta-two-text;
+    &:hover {
+      background: $color-cta-two-hover-bg; 
+      color: $color-cta-two-text;
+    }
+    &._button-noBorder {
+      color: $color-cta-two-bg;
+      border-color: $color-cta-two-bg;
+      &:hover {
+        color: $color-paper;
+        border-color: $color-cta-two-hover-bg;
+      }
+    }
+  }
+  ._button-3 {
+    background: $color-cta-three-bg;
+    color: $color-cta-three-text;
+    &:hover {
+      background: $color-cta-three-hover-bg; 
+      color: getHovercolor($color-cta-three-text);
+    }
+    &._button-noBorder {
+      color: $color-cta-three-bg;
+      border-color: $color-cta-three-bg;
+      &:hover {
+        color: $color-paper;
+        border-color: $color-cta-three-hover-bg;
+      }
+    }
+  }
+  ._button-4 {
+    background: $color-cta-four-bg;
+    color: $color-cta-four-text;
+    &:hover {
+      background: $color-cta-four-hover-bg; 
+      color: getHovercolor($color-cta-four-text);
+    }
+    &._button-noBorder {
+      color: $color-cta-four-bg;
+      border-color: $color-cta-four-bg;
+      &:hover {
+        color: $color-paper;
+        border-color: $color-cta-four-hover-bg;
+      }
+    }
   }
 
 
-  %button, button, .button {
-    @extend %theme-button-red;
-  }
 
 
 

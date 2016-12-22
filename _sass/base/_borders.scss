@@ -1,6 +1,8 @@
 
 
+$border-line: 1px;
 $border-thin: 2px;
+$border-medium: 3px;
 $border-thick: 6px;
 
 %border-base {
@@ -21,3 +23,80 @@ $border-thick: 6px;
   @extend %border-base;
   border-top: $border-thick solid $color-black;
 }
+  ._border-thick-text {
+    text-align: center;
+    padding: $base/2 0;
+    display: block;
+    background: $color-paper;
+    @extend h5;
+    font-weight: 700;
+    &:before {
+      content: attr(data-text);
+      background: $color-paper;
+      display: inline-block;
+      position: relative;
+      z-index: 999;
+      padding: $base/2 $base*3/2;
+    }
+    &:after {
+      display: block;
+      content: ' ';
+      @extend %border-base;
+      border-top: $border-thick solid $color-black;
+      display: block;
+      position: relative;
+      top: -$base*2+8;
+      padding: $base/2 $base;
+      background: $color-paper;
+    }
+  }
+
+._border-dotted {
+  @extend %border-base;
+  border-top: $border-thick dotted $color-black;
+}
+
+._border-thin-double {
+  @extend %border-base;
+  border-top: $border-thick double $color-black;
+}
+
+._border-dashed {
+  @extend %border-base;
+
+  height: $border-thick;
+  width:100%;
+  background-image: linear-gradient(to right, $color-black 50%, rgba(255, 255, 255, 0) 0%);
+  background-position: left;
+  // background-size: 18px 24px;
+  background-size: 24px 4px;
+  background-repeat: repeat-x;
+}
+
+._border-triangle {
+  height: 12px;
+  width: 100%;
+  background-image: linear-gradient(34deg, #333333 50%, rgba(255, 255, 255, 0) 0%);
+  background-position: left;
+  background-size: 16px 12px;
+  background-repeat: repeat-x;
+  border: 0;
+}
+
+._border-hatch {
+  height: 6px;
+  width: 100%;
+  background-image: repeating-linear-gradient(
+    40deg, 
+    $color-paper 0, 
+    $color-black 1px, $color-black .25em, 
+    $color-paper calc(.25em + 1px), $color-paper .75em
+  );
+  background-position: left;
+  // background-size: 16px 12px;
+  background-repeat: repeat-x;
+  border: 0;
+}
+
+
+

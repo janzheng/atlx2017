@@ -1,0 +1,475 @@
+
+
+// all forms should try to adhere to vertical rhythm
+
+
+// General form styling
+
+// $font-size-form: $base-p1;
+$font-size-form: $base;
+
+%form-style {
+  @extend %font-sans;
+  font-size: $font-size-form;
+  // @extend %font-bold;
+  // @extend %font-light;
+  border-radius: $radius;
+}
+
+
+._form-container {
+  background: $color-white;
+  padding: $base-p2;
+  border: $color-black solid $border-medium;
+}
+  ._form-title, ._form-text {
+    @extend ._padding-bottom;
+  }
+
+._form-element-label {
+  display: block;
+  padding-bottom: $base/4;
+  @extend %font-bold;
+
+  span {
+    font-weight: 300;
+    font-size: $base-m1;
+  }
+}
+  ._form-element-label-desc {
+    @extend ._form-element-label;
+    padding-bottom: $base/2;
+    font-weight: 300;
+  }
+
+._form-element-error-container {
+  display: block;
+  & + input, & + textarea {
+    border-top-left-radius: 0;
+    &, &:focus {
+      border-color: $color-warning !important;
+      border-width: $border-medium !important;
+    }
+  }
+}
+  ._form-element-error {
+    display: inline-block;
+    clear: both;
+    background: $color-warning;
+    color: $color-paper;
+    padding: $base/2 $base;
+    // @extend ._margin-bottom;
+  }
+
+
+// group elements together 
+._form-element-group {
+  margin-top: $base*2;
+  margin-bottom: $base*4;
+}
+  ._form-element-group-title {
+    // @extend %h4-display;
+    @extend %font-bold;
+    font-size: $base-p1;
+    display: block;
+    padding-bottom: $base/2;
+    margin-bottom: $base;
+    border-bottom: $border-line $color-gray solid;
+  }
+
+
+
+
+// 
+//  Individual Element Styling
+// 
+
+label {
+  display: block;
+  @extend %font-sans;
+  vertical-align: top;
+  cursor: default;
+}
+
+input, .input {
+  @extend %form-style;
+  // display: inline-block;
+  display: block;
+  height: $base*2;
+  padding: $base*3/2 $base;
+  background: $color-input-bg;
+
+  @extend %theme-input-paper;
+  @extend ._margin-bottom-2;
+
+  border: $border-width solid $color-input-border;
+  margin-right: $base/2;
+
+  &:focus {
+    padding: $base*2 $base;
+  }
+
+  &._wide {
+    width: 100%;
+  }
+  &._medium {
+    width: 200px;
+  }
+
+  &._short {
+    width: 100px;
+  }
+
+  // @include screen-mobile-only {
+  //   width: 100%;
+  //   margin: 0;
+  //   margin-bottom: $base/2;
+  // }
+}
+
+textarea, .textarea {
+  @extend %form-style;
+  display: inline-block;
+  // height: $base*2;
+  padding: $base*3/2 $base;
+  background: $color-input-bg;
+
+  @extend %theme-input-paper;
+  @extend ._margin-bottom-2;
+
+  border: $border-width solid $color-input-border;
+  margin-right: $base/2;
+}
+
+
+
+
+
+
+// 
+// Checkboxes and Radio
+// 
+
+._form-element-checkbox-container {
+  @extend ._margin-bottom;
+  // margin-top: $base/2;
+}
+
+  ._form-element-checkbox {
+
+    // margin-bottom: $base/2;
+
+    &, * { 
+      @extend %user-select-none;
+    }
+
+    /* hide default checkbox */
+    input[type="checkbox"] {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      border: 0;
+
+      -webkit-appearance: none;
+      appearance: none;
+      display: relative;
+      cursor: pointer; 
+      @extend %user-select-none;
+    }
+
+    /* custom checkbox placeholder */
+    input[type="checkbox"]:before {
+      content: ' ';
+      display: block;
+      position: relative;
+      top: 9px;
+      width: $base+2px;
+      height: $base+2px;
+      border: 1px solid $color-gray-light;
+      border-radius: $radius;
+      background-color: $color-purewhite;
+      margin-right: $base/4;
+      cursor: pointer; 
+    }
+
+    /* accessibility / focus outline color */
+    input[type="checkbox"]:focus {
+      outline: 0;
+    }
+    input[type="checkbox"]:focus:before {
+      border-color: $color-blue-light;
+    }
+
+    /* checkmark base style */
+    input[type="checkbox"]:after {
+      content: '✔';
+      position: absolute;
+      margin-top: -8px;
+      margin-left: 4px;
+      font-size: $base-m1;
+      z-index: 100;
+      @extend %ease;
+      opacity: 0;
+    }
+
+      // disabled
+      input[type="checkbox"][disabled] { 
+        // opacity: 0;
+        display: none;
+      }
+
+      input[type="checkbox"][disabled]:after {
+        @extend %ease;
+        opacity: 0;
+        background-color: $color-gray;
+      }
+
+      // checked checkbox container
+      input[type="checkbox"]:checked:before {
+        background: $color-blue-light;
+        border-color: $color-blue-light;
+      }
+
+      // checked checkmark
+      input[type="checkbox"]:checked:after {
+        @extend %ease;
+        opacity: 1;
+        color: $color-white;
+      }
+
+      // label style
+      input[type="checkbox"] + span {
+        cursor: pointer;
+        @extend %user-select-none;
+
+        &:hover {
+          color: $color-blue-light;
+        }
+      }
+
+      // checked label style
+      input[type="checkbox"]:checked + span {
+        color: $color-blue;
+      }
+
+      // not checked label
+      input[type="checkbox"]:not(:checked) + span {
+        // color: $cmu-color-title;
+      }
+
+      // disabled label style (has to be after not checked style)
+      input[type="checkbox"][disabled] + span {
+        padding-left: $base;
+        display: none;
+      }
+  }
+
+
+
+// 
+//    Radio Buttons / Radio Group
+// 
+
+._form-element-radiogroup-container {
+  @extend ._margin-bottom-2;
+  // margin-top: $base/2;
+}
+
+  ._form-element-radio {
+
+    // margin-bottom: $base/2;
+    label {
+      line-height: 0;
+    }
+
+    &, * { 
+      @extend %user-select-none;
+    }
+
+    /* hide default radio */
+    input[type="radio"] {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      border: 0;
+
+      -webkit-appearance: none;
+      appearance: none;
+      display: relative;
+      cursor: pointer; 
+      @extend %user-select-none;
+    }
+
+    /* custom radio placeholder */
+    input[type="radio"]:before {
+      content: ' ';
+      display: block;
+      position: relative;
+      top: 12px;
+      width: $base+2px;
+      height: $base+2px;
+      border: 1px solid $color-gray-light;
+      border-radius: 100px;
+      background-color: $color-purewhite;
+      margin-right: $base/4;
+      cursor: pointer; 
+    }
+
+    /* accessibility / focus outline color */
+    input[type="radio"]:focus {
+      outline: 0;
+    }
+    input[type="radio"]:focus:before {
+      border-color: $color-blue-light;
+    }
+
+    /* checkmark base style */
+    input[type="radio"]:after {
+      content: '•';
+      position: absolute;
+      // margin-top: -8px;
+      margin-left: 3px;
+      font-size: 34px;
+      line-height: 6px;
+      z-index: 100;
+      @extend %ease;
+      opacity: 0;
+    }
+
+      // disabled
+      input[type="radio"][disabled] { 
+        // opacity: 0;
+        display: none;
+      }
+
+      input[type="radio"][disabled]:after {
+        @extend %ease;
+        opacity: 0;
+        background-color: $color-gray;
+      }
+
+      // checked radio container
+      input[type="radio"]:checked:before {
+        background: $color-blue-light;
+        border-color: $color-blue-light;
+      }
+
+      // checked checkmark
+      input[type="radio"]:checked:after {
+        @extend %ease;
+        opacity: 1;
+        color: $color-white;
+      }
+
+      // label style
+      input[type="radio"] + span {
+        cursor: pointer;
+        @extend %user-select-none;
+
+        &:hover {
+          color: $color-blue-light;
+        }
+      }
+
+      // checked label style
+      input[type="radio"]:checked + span {
+        color: $color-blue;
+      }
+
+      // not checked label
+      input[type="radio"]:not(:checked) + span {
+        // color: $cmu-color-title;
+      }
+
+      // disabled label style (has to be after not checked style)
+      input[type="radio"][disabled] + span {
+        padding-left: $base;
+        display: none;
+      }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// email marketing / mailchimp-only
+#mce-EMAIL {
+  min-width: 60%;
+  
+  // @include screen-mobile-only {
+  //   width: 100%;
+  //   margin: 0;
+  //   margin-bottom: $base/2;
+  // }
+}
+
+
+
+
+// General Form Settings
+
+// .form-group {
+//   // default override;
+//   margin-bottom: $base*2 !important;
+
+//   input, textarea, .well, .well-sm {
+//     border-radius: 0;
+//     background: $color_form_bg;
+//     color: $color_form_text;
+//     border-color: $color_form_border;
+//   }
+// }
+
+// ._input_large {
+//   font-size: $base*3/2 !important;
+//   height: $base*5 !important;
+// }
+
+
+// form label.error {
+//   display: block;
+//   margin-top: 10px;
+//   margin-bottom: 0px;
+//   font-weight: normal;
+//   color: lighten( red, 20% );
+// }
+
+// // form updater
+// .updateForm textarea {
+//   min-height: 200px;
+// }
+
+// ._textArea_small textarea {
+//   min-height: 100px;
+// }
+
+// ._form-large {
+//   font-size: 21px;
+//   height: 66px;
+//   letter-spacing: 0.48px;
+// }

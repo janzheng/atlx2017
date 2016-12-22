@@ -7,9 +7,9 @@
 
 // Fonts & Typography
 // %font-sans {font-family: "Poppins", "Helvetica Neue", sans-serif;}
-%font-sans {font-family: "Roboto Slab", "Helvetica Neue", sans-serif;}
+%font-sans, ._font-sans {font-family: "Roboto Slab", "Helvetica Neue", sans-serif;}
 // %serif {font-family: 'Merriweather', Georgia, serif;}
-%font-display { font-family: 'Trend Sans One', 'Poppins', sans-serif; }
+%font-display, ._font-display { font-family: 'Trend Sans One', 'Poppins', sans-serif; }
 
 
 
@@ -36,40 +36,6 @@
 // $size-large: $base*2;
 // $size-larger: $base*2.5;
 // $size-largest: $base*3.2;
-
-
-// 
-// 
-//      TYPOGRAPHY TAGS
-// 
-//
-
-
-// h1, %h1 {
-//   @extend %sans-serif;
-//   font-size: $base*2;
-//   line-height: $base*4;
-//   font-weight: 300;
-//   padding-top: $base*4;
-//   padding-bottom: $base*2;
-// }
-
-// h2, %h2 {
-//   @extend %sans-serif;
-//   font-size: $base*1.5;
-//   line-height: $base*2.5;
-//   font-weight: 300;
-//   letter-spacing: 0.5px;
-//   color: $dark-gray;
-//   padding-bottom: $base;
-// }
-
-
-// strong {
-//   color: $deep-gray;
-// }
-
-
 
 
 
@@ -100,12 +66,6 @@
 }
 
 
-// 
-// 
-//    TYPOGRAPHY
-//    Poppins:300,400,500,600 
-//    EB Garamond only has one (regular)
-  
   %font-light {
     font-weight: 300;
   }
@@ -132,62 +92,149 @@
 
   $size-adjust: 6px;
 
-  h1.display, %h1-display {
-    @extend %font-display;
-    font-size: $base*3;
-    // line-height: $base*3 +6px;
-    line-height: $base*3;
+  h1, %h1 {
+    @extend %font-sans;
+    font-size: $base-p6;
+    line-height: $base-p6;
     letter-spacing: -4px;
-    // @extend %font-bold;
-    // @extend %font-sans;
-    // font-size: $base-p4;
-    // line-height: $base-p5;
-    // letter-spacing: -3px;
-    // padding: $base 0;
-
-    .x {
-      color: $color-red;
-      @extend %font-smooth;
-      letter-spacing: -8px;
-    }
+    padding-bottom: $base*3;
   }
+    h1.display, %h1-display {
+      @extend %font-display;
+      text-transform: uppercase;
+      font-size: $base-p6;
+      line-height: $base-p6;
+      letter-spacing: -9px;
+      padding-bottom: $base*3;
 
-  h2 {
+      // font isn't flush left...
+      margin-left: -7px;
+        &._center, &._right {
+          margin-left: 0; // reset if we're centering or right aligning
+        }
+
+      .x { // special case for "eXchange" – change kerning
+        color: $color-red;
+        @extend %font-smooth;
+        letter-spacing: -8px;
+      }
+    }
+
+
+  h2, %h2 {
     @extend %font-bold;
     @extend %font-sans;
-    font-size: $base-p2;
-    line-height: $base-p3;
+    font-size: $base-p4;
+    line-height: $base-p4;
     letter-spacing: 0.2px;
-    padding: $base*3/4 0;
+    padding: $base 0;
   }
+    h2.display, %h2-display {
+      @extend %font-display;
+      text-transform: uppercase;
+      font-size: $base-p4;
+      line-height: $base-p4 ;
+      letter-spacing: -4px;
+      @extend ._padding-bottom;
+      padding: 0;
 
-  h3 {
-    @extend %font-medium;
+      // font isn't flush left...
+      margin-left: -7px;
+        &._center, &._right {
+          margin-left: 0; // reset if we're centering or right aligning
+        }
+
+    }
+      // logo / wordmark
+      ._logotype {
+        h2 { 
+          @extend %font-display;
+          padding: 0 !important;
+          position: relative;
+          top: -$base/4;
+          letter-spacing: -4px;
+        }
+        .x { // special case for "eXchange" – change kerning
+          color: $color-red;
+          @extend %font-smooth;
+          letter-spacing: -8px;
+        }
+      }
+
+  h3, %h3 {
+    @extend %font-bold;
     @extend %font-sans;
-    font-size: $base-p1;
+    // text-transform: uppercase;
+    font-size: $base-p3;
     line-height: $base-p3;
     padding-bottom: $base;
     letter-spacing: 0.6px;
   }
+    h3.display, %h3-display {
+      @extend %font-display;
+      text-transform: uppercase;
+      font-size: $base-p2;
+      line-height: $base-p3;
+      letter-spacing: -2px;
 
-  h4 {
-    @extend %font-medium;
+      // font isn't flush left...
+      margin-left: -4px;
+        &._center, &._right {
+          margin-left: 0; // reset if we're centering or right aligning
+        }
+
+      .x {
+        color: $color-red;
+        @extend %font-smooth;
+        letter-spacing: -8px;
+      }
+    }
+
+
+
+  h4, %h4 {
+    @extend %font-light;
     @extend %font-sans;
-    font-size: $base;
-    line-height: $base-p2;
-    padding-bottom: $base/2;
+    font-size: $base-p2;
+    line-height: $base-p4;
+    padding-bottom: $base;
 
     letter-spacing: 0.2px;
   }
+    h4.display, %h4-display {
+      @extend %font-display;
+      text-transform: uppercase;
+      font-size: $base;
+      line-height: $base-p1;
+      letter-spacing: 0.3px;
 
-  h5 {
+      // font isn't flush left...
+      margin-left: -2px;
+        &._center, &._right {
+          margin-left: 0; // reset if we're centering or right aligning
+        }
+    }
+
+  h5, %h5 {
     @extend %font-medium;
     @extend %font-sans;
-    font-size: $base-m2;
-    line-height: $base-p1;
+    font-size: $base;
+    line-height: $base-p3;
 
     letter-spacing: 1.4px;
     text-transform: uppercase;
+    padding-bottom: $base/2;
+  }
+
+  h6, %h6 {
+    @extend %font-medium;
+    @extend %font-sans;
+    font-size: $base-m1;
+    line-height: $base-p2;
+
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    padding-bottom: $base/2;
   }
 
 
@@ -246,7 +293,7 @@
     @extend %font-medium;
     @extend %p-serif; // makes it so much more legible
     line-height: $base-p2;  // + 8px; // + $size-adjust;
-    // letter-spacing: 0.54px;
+    letter-spacing: 0.34px;
     padding-bottom: $base;
   }
     .app .p-larger, %p-larger {
@@ -254,6 +301,11 @@
       @extend %p-serif-larger;
     } 
 
+    ._p-small {
+      @extend %p;
+      font-size: $base-m1;
+      line-height: $base;
+    }
 
     html, body {
       @extend %p;
