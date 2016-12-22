@@ -286,8 +286,20 @@
                         </label>
                       </div>
                     </div>
+                  </div>
 
-
+                  <div class="_form-element-container _form-checkbox-group">
+                    <label class="_form-element-label" for="_form-name">Would you like to volunteer?</label>
+                    <label class="_form-element-label-desc">If you express interest, will contact you at your email closer to the event.</label>
+                    <!-- <div class="_form-element-error-container"><label class="_form-element-error">Error message</label></div> -->
+                    <div class="_form-element-checkbox-container">
+                      <div class="_form-element-checkbox ">
+                        <label for="volunteer-1">
+                          <input type="checkbox" id="volunteer-1" name="volunteer-1"/>
+                            <span for="volunteer-1">Yes, I would love to volunteer!</span>
+                        </label>
+                      </div>
+                    </div>
                   </div>
 
                   <!-- <p>checkbox grid selector?</p> 
@@ -321,6 +333,56 @@
                     </div>
                   </div>
 
+                  <div class="_form-element-container _form-radio-group _required">
+                    <label class="_form-element-label" for="_form-name">Would you like to pre-order a shirt? <span>Radio style, required input, default to a "none" option</label>
+                    <label class="_form-element-label-desc">Shirts will be very limited at the event. We order our shirts for the event based on how many people pre-order shirts at registration.</label>
+                    <!-- <div class="_form-element-error-container"><label class="_form-element-error">Error message</label></div> -->
+                    <div class="_form-element-radiogroup-container">
+                      <div class="_form-element-radio ">
+                        <label for="shirt-1">
+                          <input type="radio" id="shirt-1" name="radiogroup-3"/>
+                            <span for="shirt-1">$20 – XL – Extra large shirt</span>
+                        </label>
+                      </div>
+
+                      <div class="_form-element-radio ">
+                        <label for="shirt-2">
+                          <input type="radio" id="shirt-2" name="radiogroup-3"/>
+                            <span for="shirt-2">$20 – L – Large shirt</span>
+                        </label>
+                      </div>
+
+                      <div class="_form-element-radio ">
+                        <label for="shirt-3">
+                          <input type="radio" id="shirt-3" name="radiogroup-3"/>
+                            <span for="shirt-3">$20 – MD – Medium shirt</span>
+                        </label>
+                      </div>
+
+                      <div class="_form-element-radio ">
+                        <label for="shirt-4">
+                          <input type="radio" id="shirt-4" name="radiogroup-3"/>
+                            <span for="shirt-4">$20 – SM – Small shirt</span>
+                        </label>
+                      </div>
+
+                      <div class="_form-element-radio ">
+                        <label for="shirt-5">
+                          <input type="radio" id="shirt-5" name="radiogroup-3"/>
+                            <span for="shirt-5">$20 – XS – Extra small shirt</span>
+                        </label>
+                      </div>
+
+                      <div class="_form-element-radio ">
+                        <label for="shirt-6">
+                          <input type="radio" id="shirt-6" name="radiogroup-3" checked/>
+                            <span for="shirt-6">$0 – No shirt for me :(</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+
                 </div>
 
                 <!-- treat droplist as an expandable list of radio buttons. NO DROPDOWNS bc they're terrible 
@@ -329,86 +391,51 @@
                       Don't implement until we know it's needed
                 -->
 
+                <!-- 
+                      We can repurpose Radio and Checkboxes to do most of these anyway,
+                      so stop developing these for now. Make it less complicated
+
+                      Inspiration: https://uxdesign.cc/design-better-forms-96fadca0f49c#.ylcnk8y59
+                 -->
+              <!-- 
                 <div class="_form-element-group">
                   <span class="_form-element-group-title">Option and Select Groups</span>
 
+                  <div class="_form-element-container _form-option-group _required">
+                    <label class="_form-element-label" for="_form-name">ATLX Dance Registration <span>Choose which dances to select. Selecting the first value selects ALL following values! Clicking again while toggled unchecks all following values. Unchecking one of the following values will uncheck the default value.</span></label>
+                    <div class="_form-element-option-container">
+                      <div class="_form-element-option _form-element-option-all">
+                        <label for="dancepass-1">
+                          <input type="checkbox" id="dancepass-1" name="dancepass-1"/>
+                            <span for="dancepass-1">Sign me up for Everything!!!</span>
+                        </label>
+                      </div>
+
+                      <div class="_form-element-option ">
+                        <label for="dancepass-2">
+                          <input type="checkbox" id="dancepass-2" name="dancepass-2"/>
+                            <span for="dancepass-2">Friday Main Dance</span>
+                        </label>
+                      </div>
+                      <div class="_form-element-option ">
+                        <label for="dancepass-3">
+                          <input type="checkbox" id="dancepass-3" name="dancepass-3"/>
+                            <span for="dancepass-3">Friday Late Night Dance</span>
+                        </label>
+                      </div>
+                      
+
+                    </div>
+                  </div>
 
 
 
                   <div class="_form-element-container _form-drop-group _required">
                     <label class="_form-element-label" for="_form-name">Option Group</label>
-
-                    <!-- <div class="_form-element-error-container"><label class="_form-element-error">Error message</label></div> -->
-
-                    <div class="_form-element-container _form-option-group _required">
-                      <label class="_form-element-label" for="_form-name">Would you like to volunteer? <span>Checkbox style, not required input, can check / uncheck</span></label>
-                      <label class="_form-element-label-desc">If you express interest, will contact you at your email closer to the event</label>
-                      <!-- <div class="_form-element-error-container"><label class="_form-element-error">Error message</label></div> -->
-                      <div class="_form-element-checkbox-container">
-                        <div class="_form-element-checkbox ">
-                          <label for="volunteer-1">
-                            <input type="checkbox" id="volunteer-1" name="volunteer-1"/>
-                              <span for="volunteer-1">Yes, I would love to volunteer!</span>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="_form-element-container _form-option-group _required">
-                      <label class="_form-element-label" for="_form-name">ATLX Dance Registration <span>Choose which dances to select. Selecting the first value selects ALL following values!</span></label>
-                    </div>
-
-                    <div class="_form-element-container _form-radio-group _required">
-                      <label class="_form-element-label" for="_form-name">Would you like to pre-order a shirt? <span>Radio style, required input, default to a "none" option</label>
-                      <label class="_form-element-label-desc">Shirts will be very limited at the event. We order our shirts for the event based on how many people pre-order shirts at registration.</label>
-                      <!-- <div class="_form-element-error-container"><label class="_form-element-error">Error message</label></div> -->
-                      <div class="_form-element-radiogroup-container">
-                        <div class="_form-element-radio ">
-                          <label for="shirt-1">
-                            <input type="radio" id="shirt-1" name="radiogroup-3"/>
-                              <span for="shirt-1">$20 – XL – Extra large shirt</span>
-                          </label>
-                        </div>
-
-                        <div class="_form-element-radio ">
-                          <label for="shirt-2">
-                            <input type="radio" id="shirt-2" name="radiogroup-3"/>
-                              <span for="shirt-2">$20 – L – Large shirt</span>
-                          </label>
-                        </div>
-
-                        <div class="_form-element-radio ">
-                          <label for="shirt-3">
-                            <input type="radio" id="shirt-3" name="radiogroup-3"/>
-                              <span for="shirt-3">$20 – MD – Medium shirt</span>
-                          </label>
-                        </div>
-
-                        <div class="_form-element-radio ">
-                          <label for="shirt-4">
-                            <input type="radio" id="shirt-4" name="radiogroup-3"/>
-                              <span for="shirt-4">$20 – SM – Small shirt</span>
-                          </label>
-                        </div>
-
-                        <div class="_form-element-radio ">
-                          <label for="shirt-5">
-                            <input type="radio" id="shirt-5" name="radiogroup-3"/>
-                              <span for="shirt-5">$20 – XS – Extra small shirt</span>
-                          </label>
-                        </div>
-
-                        <div class="_form-element-radio ">
-                          <label for="shirt-6">
-                            <input type="radio" id="shirt-6" name="radiogroup-3" checked/>
-                              <span for="shirt-6">$0 – No shirt for me :(</span>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-
                   </div>
                 </div>
+
+                -->
 
               </form>
 
