@@ -1402,13 +1402,6 @@ button, input, select, textarea {
   margin: 0;
 }
 
-input:invalid, textarea:invalid {
-  border-radius: 1px;
-  -moz-box-shadow: 0px 0px 5px red;
-  -webkit-box-shadow: 0px 0px 5px red;
-  box-shadow: 0px 0px 5px red;
-}
-
 .no-boxshadow input:invalid, .no-boxshadow textarea:invalid {
   background-color: #f0dddd;
 }
@@ -2600,6 +2593,43 @@ html, body {
   border: 0;
 }
 
+._border-banner {
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 60px;
+}
+._border-banner ._border-banner-container {
+  width: 80%;
+  margin: 0 auto;
+}
+._border-banner ._border-banner-content {
+  left: 0;
+  position: relative;
+  padding-bottom: 100px;
+}
+._border-banner .slope-left {
+  content: ' ';
+  display: block;
+  width: 100%;
+  height: 71px;
+  background: green;
+  position: absolute;
+  /* left: -95px; */
+  right: 105px;
+  top: 72px;
+  transform: rotate(-30deg);
+  transform-origin: bottom left;
+}
+._border-banner h2 {
+  background: red;
+  z-index: 1;
+  position: relative;
+}
+._border-banner .container {
+  padding: 0;
+}
+
 ._block {
   display: block;
 }
@@ -2657,7 +2687,7 @@ html, body {
   margin-bottom: 16px;
 }
 
-._margin-bottom_none {
+._margin-bottom-none {
   margin-bottom: 0 !important;
 }
 
@@ -2898,6 +2928,10 @@ input, .input, textarea, .textarea {
   border: #333333 solid 3px;
 }
 
+._form-element-inline {
+  display: inline-block;
+}
+
 ._form-element-label, ._form-element-label-desc {
   display: block;
   padding-bottom: 4px;
@@ -2979,6 +3013,7 @@ textarea, .textarea {
   display: inline-block;
   padding: 24px 16px;
   background: #F7F7F7;
+  width: 100%;
   border: 2px solid #888;
   margin-right: 8px;
 }
@@ -3149,7 +3184,25 @@ textarea, .textarea {
   display: none;
 }
 
+#mc_embed_signup {
+  margin-bottom: 32px;
+  padding: 16px 64px;
+  margin-top: 64px;
+}
+#mc_embed_signup * {
+  text-align: center;
+  margin: 0 auto;
+}
+#mc_embed_signup input {
+  line-height: 0;
+  border-radius: 0;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  height: 58px;
+}
+
 #mce-EMAIL {
+  margin-top: 16px;
   min-width: 60%;
 }
 

@@ -26,6 +26,10 @@ $font-size-form: $base;
     @extend ._padding-bottom;
   }
 
+  ._form-element-inline {
+    display: inline-block;
+  }
+
 ._form-element-label {
   display: block;
   padding-bottom: $base/4;
@@ -137,6 +141,7 @@ textarea, .textarea {
   // height: $base*2;
   padding: $base*3/2 $base;
   background: $color-input-bg;
+  width: 100%;
 
   @extend %theme-input-paper;
   @extend ._margin-bottom-2;
@@ -457,7 +462,26 @@ textarea, .textarea {
 
 
 // email marketing / mailchimp-only
+#mc_embed_signup {
+  margin-bottom: $base*2;
+  padding: $base $base*4;
+  margin-top: $base*4;
+  * {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  input {
+    line-height: 0;
+    border-radius: 0;
+    margin-top: $base;
+    margin-bottom: $base;
+    height: 58px; // line height not working; is 0??
+  }
+}
+
 #mce-EMAIL {
+  margin-top: $base;
   min-width: 60%;
   
   // @include screen-mobile-only {
