@@ -14,7 +14,7 @@
   cursor: pointer;
   @extend %ease;
   // font-weight: 700;
-  letter-spacing: -0.2px;
+  letter-spacing: 0.6px;
   // font-size: $base-p1;
   margin-bottom: $base;
   border-width: 0;
@@ -22,11 +22,21 @@
 
   @extend %h5;
 }
-  ._button-noBorder {
+  ._button-bottomBorder {
     letter-spacing: 0.3px;
     background-color: transparent;
     border-width: $border-medium;
     @extend %font-bold;
+  }
+
+  ._button-noBorder {
+    letter-spacing: 0.3px;
+    background-color: transparent;
+    border-width: 0;
+    @extend %font-bold;
+    &:hover {
+      border-width: $border-medium;
+    }
   }
 
   // standard red button.
@@ -44,6 +54,12 @@
     }
   }
 
+  ._button-opacity-half {
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
+  }
 
 
 

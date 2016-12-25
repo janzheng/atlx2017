@@ -132,6 +132,12 @@
   ._padding-top {
     padding-top: $base;
   }
+    ._padding-top-unless-xs {
+      padding-top: $base;
+      @media (max-width: $width_xs_max) {
+        padding-top: inherit;
+      }
+    }
     ._padding-top-2 {
       padding-top: $base*2;
     }
@@ -225,6 +231,12 @@
 ._right {
   text-align: right;
 }
+  ._right-unless-xs {
+    text-align: right;
+    @media (max-width: $width_xs_max) {
+      text-align: inherit;
+    }
+  }
   ._posRight {
     position: absolute;
     right: 0;

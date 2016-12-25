@@ -166,7 +166,7 @@
     @extend %font-sans;
     // text-transform: uppercase;
     font-size: $base-p3;
-    line-height: $base-p3;
+    line-height: $base-p4;
     padding-bottom: $base;
     letter-spacing: 0.6px;
   }
@@ -408,6 +408,14 @@ a, %a {
   //   // color: $color_black;
   // }
 }
+
+  a._noHover {
+    border: 0;
+    &:hover {
+      outline: none;
+      border: 0;
+    }
+  }
 
 // %a-dark {
 //   @extend %a;

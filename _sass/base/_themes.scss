@@ -272,9 +272,16 @@ $color-cta-four-hover-bg:  getHoverColor($color-burnt);
     background: $color-cta-hover-bg; 
     color: $color-cta-text;
   }
-  &._button-noBorder {
+  &._button-bottomBorder {
     color: $color-cta-bg;
     border-color: $color-cta-bg;
+    &:hover {
+      color: $color-paper;
+      border-color: $color-cta-hover-bg;
+    }
+  }
+  &._button-noBorder {
+    color: $color-black;
     &:hover {
       color: $color-paper;
       border-color: $color-cta-hover-bg;
@@ -288,7 +295,7 @@ $color-cta-four-hover-bg:  getHoverColor($color-burnt);
       background: $color-cta-two-hover-bg; 
       color: $color-cta-two-text;
     }
-    &._button-noBorder {
+    &._button-bottomBorder {
       color: $color-cta-two-bg;
       border-color: $color-cta-two-bg;
       &:hover {
@@ -304,7 +311,7 @@ $color-cta-four-hover-bg:  getHoverColor($color-burnt);
       background: $color-cta-three-hover-bg; 
       color: getHovercolor($color-cta-three-text);
     }
-    &._button-noBorder {
+    &._button-bottomBorder {
       color: $color-cta-three-bg;
       border-color: $color-cta-three-bg;
       &:hover {
@@ -320,7 +327,7 @@ $color-cta-four-hover-bg:  getHoverColor($color-burnt);
       background: $color-cta-four-hover-bg; 
       color: getHovercolor($color-cta-four-text);
     }
-    &._button-noBorder {
+    &._button-bottomBorder {
       color: $color-cta-four-bg;
       border-color: $color-cta-four-bg;
       &:hover {

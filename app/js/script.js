@@ -31,8 +31,9 @@
 
 $(document).ready(function() {
   var windowHeight = $(window).height();
+  var logoHeight = $('.page-home--logo').height();
   console.log(windowHeight);
 
-  $('._windowHeight').css({'height': windowHeight});
-
+  $('._windowHeight').css({'height': windowHeight * 0.75});
+  // $('.page-home--logo').css({'padding-top': (windowHeight * 0.75)/2 - logoHeight/2})
 });

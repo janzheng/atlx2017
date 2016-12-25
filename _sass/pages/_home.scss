@@ -12,12 +12,16 @@
     // 
     //  LOGO
     // 
-    $logo-height: 450px;
+    $logo-height: 500px;
     .page-home--logo {
       text-align: center;
       position: relative;
       z-index: 100;
-      padding-top: $base * 9;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
 
       @include screen-xs {
         padding-top: $base * 3/2;
@@ -25,6 +29,7 @@
     }
       .page-home--logo-container {
         height: $logo-height;
+        position: relative;
       }
       .page-home--logo-bg {
         display: block;
@@ -59,7 +64,7 @@
       vertical-align: middle;
       text-align: left;
       position: relative;
-      top: -8px;
+      // top: -8px;
     }
 
 
@@ -73,4 +78,24 @@
     }
 
 
+
+._burst {    
+  position: absolute;
+  padding: $base;
+  background: $color-black;
+  top: -60px;
+  z-index: 200;
+  height: 80px;
+  width: 80px;
+  right: -40px;
+  border-radius: 100px;
+  transform: rotate(-15deg);
+  span {
+    color: $color-paper;    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+}
 

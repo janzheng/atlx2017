@@ -464,7 +464,7 @@ textarea, .textarea {
 // email marketing / mailchimp-only
 #mc_embed_signup {
   margin-bottom: $base*2;
-  padding: $base $base*4;
+  // padding: $base $base*4;
   margin-top: $base*4;
   * {
     text-align: center;
@@ -474,10 +474,13 @@ textarea, .textarea {
   input {
     line-height: 0;
     border-radius: 0;
-    margin-top: $base;
+    // margin-top: $base;
     margin-bottom: $base;
     height: 58px; // line height not working; is 0??
   }
+}
+#mce-content {
+  padding: $base*2 0;
 }
 
 #mce-EMAIL {
