@@ -21,6 +21,11 @@
   margin-right: $base/2;
 
   @extend %h5;
+
+  @media (max-width: $width_xs_max) {
+    width: 47%;
+    line-height: $base*3/2;
+  }
 }
   ._button-bottomBorder {
     letter-spacing: 0.3px;

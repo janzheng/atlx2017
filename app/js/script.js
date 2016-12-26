@@ -37,3 +37,28 @@ $(document).ready(function() {
   $('._windowHeight').css({'height': windowHeight * 0.75});
   // $('.page-home--logo').css({'padding-top': (windowHeight * 0.75)/2 - logoHeight/2})
 });
+
+
+// enable fittext
+// $('#test').bigtext();
+$("._headline-fixed").each(function( index ) {
+  $(this).bigtext();
+});
+
+
+// need a font-loader to run bigtext
+$(function() {
+  WebFont.load({
+    custom: {
+        families: ['Trend Sans One'], // font-family name
+        urls : ['app/fonts/trendsansone/trendsansone.css'] // URL to css
+    },
+    active: function() {
+      $("._headline-fixed").each(function( index ) {
+        $(this).bigtext();
+      });
+    }
+  });
+});
+
+

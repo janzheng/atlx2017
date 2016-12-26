@@ -59,6 +59,10 @@
 //    MARGIN
 // 
 
+._margin-half {
+  margin-top: $base/2;
+  margin-bottom: $base/2;
+}
 ._margin-center {
   margin-left: auto;
   margin-right: auto;
@@ -129,6 +133,10 @@
   ._padding {
     padding: $base $base*2;
   }
+  ._padding-half {
+    padding-top: $base/2;
+    padding-bottom: $base/2;
+  }
   ._padding-top {
     padding-top: $base;
   }
@@ -153,6 +161,9 @@
   ._padding-bottom {
     padding-bottom: $base;
   }
+    ._padding-bottom-none {
+      padding-bottom: 0;
+    }
     ._padding-bottom-half {
       padding-bottom: $base/2;
     }

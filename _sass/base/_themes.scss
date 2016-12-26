@@ -90,6 +90,30 @@ $color-cta-four-bg:        $color-burnt;
 $color-cta-four-text:      $color-purewhite;
 $color-cta-four-hover-bg:  getHoverColor($color-burnt);
 
+// bg:    blue
+// text:  pure white
+// hover: darker blue
+$color-cta-five-bg:        $color-blue;
+$color-cta-five-text:      $color-purewhite;
+$color-cta-five-hover-bg:  getHoverColor($color-blue);
+
+// bg:    green
+// text:  pure white
+// hover: darker green
+$color-cta-six-bg:        $color-green;
+$color-cta-six-text:      $color-purewhite;
+$color-cta-six-hover-bg:  getHoverColor($color-green);
+
+
+// SPECIAL: for disabled CTAs
+// bg:    lightest-gray
+// text:  pure white
+// hover: light-gray (no effect, no pointer)
+$color-cta-disabled-bg:        $color-gray-lightest;
+$color-cta-disabled-text:      $color-purewhite;
+$color-cta-disabled-hover-bg:  $color-gray-lightest;
+
+
 
 
 
@@ -336,6 +360,61 @@ $color-cta-four-hover-bg:  getHoverColor($color-burnt);
       }
     }
   }
+  ._button-5 {
+    background: $color-cta-five-bg;
+    color: $color-cta-five-text;
+    &:hover {
+      background: $color-cta-five-hover-bg; 
+      color: getHovercolor($color-cta-five-text);
+    }
+    &._button-bottomBorder {
+      color: $color-cta-five-bg;
+      border-color: $color-cta-five-bg;
+      &:hover {
+        color: $color-paper;
+        border-color: $color-cta-five-hover-bg;
+      }
+    }
+  }
+  ._button-6 {
+    background: $color-cta-six-bg;
+    color: $color-cta-six-text;
+    &:hover {
+      background: $color-cta-six-hover-bg; 
+      color: getHovercolor($color-cta-six-text);
+    }
+    &._button-bottomBorder {
+      color: $color-cta-six-bg;
+      border-color: $color-cta-six-bg;
+      &:hover {
+        color: $color-paper;
+        border-color: $color-cta-six-hover-bg;
+      }
+    }
+  }
+  ._button-disabled {
+    background: $color-cta-disabled-bg;
+    color: $color-cta-disabled-text;
+    cursor: default;
+    &:hover {
+      background: $color-cta-disabled-hover-bg; 
+      color: getHovercolor($color-cta-disabled-text);
+      cursor: default;
+    }
+    &._button-bottomBorder {
+      color: $color-cta-disabled-bg;
+      border-color: $color-cta-disabled-bg;
+      cursor: default;
+      &:hover {
+        color: $color-cta-disabled-bg;
+        border-color: $color-cta-disabled-hover-bg;
+        background: transparent !important;
+        cursor: default;
+      }
+    }
+  }
+
+
 
 
 

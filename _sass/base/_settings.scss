@@ -218,16 +218,19 @@ $width_lg_min: 1200px !default;
 
 
 ._showMobileOnly {
+  display: none;
   @media (max-width: $width_xs_max) {
     display: inherit;
   }
 }
 ._showTabletUp {
+  display: none;
   @media (min-width: $width_sm_min) {
     display: inherit;
   }
 }
 ._showMagicToTablet {
+  display: none;
   @media (min-width: $width_magic) and (max-width: $width_sm_min) {
     display: inherit;
   }
@@ -385,6 +388,7 @@ $max-widest: $width_lg_min;
   ._nav-logo {
     
   }
+
 
 
 

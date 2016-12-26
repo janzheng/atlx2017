@@ -9,7 +9,7 @@
 // %font-sans {font-family: "Poppins", "Helvetica Neue", sans-serif;}
 %font-sans, ._font-sans {font-family: "Roboto Slab", "Helvetica Neue", sans-serif;}
 // %serif {font-family: 'Merriweather', Georgia, serif;}
-%font-display, ._font-display { font-family: 'Trend Sans One', 'Poppins', sans-serif; }
+%font-display, ._font-display { font-family: 'Trend Sans One', sans-serif; }
 
 
 
@@ -204,9 +204,9 @@
     h4.display, %h4-display {
       @extend %font-display;
       text-transform: uppercase;
-      font-size: $base;
-      line-height: $base-p1;
-      letter-spacing: 0.3px;
+      font-size: $base-p1;
+      line-height: $base-p2;
+      letter-spacing: -2px;
 
       // font isn't flush left...
       margin-left: -2px;
@@ -324,6 +324,22 @@
     @extend %font-sans;
     font-weight: 300;
   }
+
+  ._large {
+    font-size: $base-p1;
+    line-height: $base-p3;
+  }
+
+
+
+  // special bigtext headlines
+  // ._headline-fixed {
+    // letter-spacing: -6px;
+  // }
+
+
+
+
 
 
 

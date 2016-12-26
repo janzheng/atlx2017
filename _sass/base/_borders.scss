@@ -14,12 +14,12 @@ $border-thick: 6px;
 }
 
 
-._border-thin {
+._border-thin, %border-thin {
   @extend %border-base;
   border-top: $border-thin solid $color-black;
 }
 
-._border-thick {
+._border-thick, %border-thick {
   @extend %border-base;
   border-top: $border-thick solid $color-black;
 }
@@ -51,17 +51,22 @@ $border-thick: 6px;
     }
   }
 
-._border-dotted {
+._border-thin-dotted, %border-thin-dotted {
+  @extend %border-base;
+  border-top: 1px dotted $color-black;
+}
+
+._border-dotted, %border-dotted {
   @extend %border-base;
   border-top: $border-thick dotted $color-black;
 }
 
-._border-thin-double {
+._border-thin-double, %border-thin-double {
   @extend %border-base;
   border-top: $border-thick double $color-black;
 }
 
-._border-dashed {
+._border-dashed, %border-dashed {
   @extend %border-base;
 
   height: $border-thick;
@@ -73,7 +78,7 @@ $border-thick: 6px;
   background-repeat: repeat-x;
 }
 
-._border-triangle {
+._border-triangle, %border-triangle {
   height: 12px;
   width: 100%;
   background-image: linear-gradient(34deg, #333333 50%, rgba(255, 255, 255, 0) 0%);
@@ -83,7 +88,7 @@ $border-thick: 6px;
   border: 0;
 }
 
-._border-hatch {
+._border-hatch, %border-hatch {
   height: 6px;
   width: 100%;
   background-image: repeating-linear-gradient(
