@@ -321,7 +321,7 @@
   }
 
   ._light {
-    @extend %font-sans;
+    // @extend %font-sans;
     font-weight: 300;
   }
 
@@ -333,9 +333,12 @@
 
 
   // special bigtext headlines
-  // ._headline-fixed {
+  ._headline-max, ._headline-fixed, ._secondline-fixed {
     // letter-spacing: -6px;
-  // }
+    span {
+      line-height: 1; // lh relative to font-size
+    }
+  }
 
 
 

@@ -1,0 +1,125 @@
+
+
+.ticket--wrapper {
+  padding: $base;
+  // border: 3px double #333;
+  @extend %border-thin-double-box;
+  background: $color-white;
+  ._border-hatch-circle-top,
+  ._border-hatch-circle-bottom {
+    &:before, &:after {
+      background: $color-white;
+    }
+  }
+}
+
+
+  .ticket--table {
+    padding-top: $base;
+    
+    td {
+      vertical-align: inherit;
+      &:first-of-type {
+        padding-right: $base;
+        text-align: right;
+        h4 {
+          @extend %h4-display;
+        }
+      }
+      // messages
+      span {
+        @extend %p;
+        display: block;
+        // padding-left: $base/2;
+      }
+    }
+    thead td {
+      text-align: left !important;
+    }
+    h4 { 
+      padding: 0;
+    }
+    .ticket-sold_out {
+      &, * { 
+        text-decoration: line-through;
+        color: $color-gray-lightest; 
+      }
+    }
+  }
+
+
+  // 
+  // Special ticket styling
+  // 
+
+  $color-ticket-hatch-bg: rgba($color-gold,0.8);// $color-paper;
+  $color-ticket-hatch-content: rgba($color-gold, 0.96);//rgba($color-paper, 0.88);
+  
+  .ticket {
+    position: relative;
+    overflow: hidden; //hides the circle from bleeding outside
+    // padding: $base*4;
+
+    // ._border-hatch-box-content {
+    //   background-color: $color-ticket-hatch-content;
+    // }
+  }
+    ._border-hatch-box, %border-hatch-box {
+      // height: 6px;
+      width: 100%;
+      background-image: repeating-linear-gradient(
+        40deg, 
+        $color-ticket-hatch-bg 0, 
+        $color-black 1px, $color-black .25em, 
+        $color-ticket-hatch-bg calc(.25em + 1px), $color-ticket-hatch-bg .75em
+      );
+      background-position: left;
+      // background-size: 16px 12px;
+      background-repeat: repeat-x;
+      // border: 0;
+      border: $border-medium solid rgba($color-black,1);
+      padding: $base;
+      border-radius: 8px;
+
+      ._border-hatch-box-content {
+        padding: $base;
+        background: $color-ticket-hatch-content;
+        border-radius: 8px;
+      }
+    }
+    $border-circle-adj: 8px;
+    $border-circle-size: $base-p4 +$border-circle-adj;
+    %border-circle {
+      content: ' ';
+      display: block;
+      width: $border-circle-size;
+      height: $border-circle-size;
+      border-radius: $border-circle-size;
+      background-color: $color-paper;
+      position: absolute;
+      border: $border-medium solid $color-black;
+    }
+    ._border-hatch-circle-top {
+      &:before {
+        @extend %border-circle;
+        top: -$border-circle-size/2;
+        left: -$border-circle-size/2;
+      }
+      &:after {
+        @extend %border-circle;
+        top: -$border-circle-size/2;
+        right: -$border-circle-size/2;
+      }
+    }
+    ._border-hatch-circle-bottom {
+      &:before {
+        @extend %border-circle;
+        bottom: -$border-circle-size/2;
+        left: -$border-circle-size/2;
+      }
+      &:after {
+        @extend %border-circle;
+        bottom: -$border-circle-size/2;
+        right: -$border-circle-size/2;
+      }
+    }

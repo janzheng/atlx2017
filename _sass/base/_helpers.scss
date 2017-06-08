@@ -24,6 +24,16 @@
 ._hidden {
   display: none !important;
 }
+  ._hidden-xs {
+    @include screen-xs-only {
+      display: none;
+    }
+  }
+  ._hidden-sm-down {
+    @include screen-sm-down {
+      display: none;
+    }
+  }
 ._pointer {
   cursor: pointer;
 }
@@ -133,6 +143,9 @@
   ._padding {
     padding: $base $base*2;
   }
+    ._padding-2 {
+      padding: $base*2;
+    }
   ._padding-half {
     padding-top: $base/2;
     padding-bottom: $base/2;
@@ -164,6 +177,9 @@
     ._padding-bottom-none {
       padding-bottom: 0;
     }
+      ._padding-bottom-none-i {
+        padding-bottom: 0 !important;
+      }
     ._padding-bottom-half {
       padding-bottom: $base/2;
     }
@@ -349,14 +365,14 @@ $shadow_edgetop: 0px -6px 12px rgba(0,0,0,0.8);
 
 
 
-
+$vertical-length: 790px;
 ._vertical {
   transform: rotate(90deg);
   /* top: 0; */
   /* position: relative; */
   /* font-size: 32px; */
   /* width: 500px; */
-  width: 900px;
+  width: $vertical-length;
   line-height: 66px;
   font-size: $base*3;
   transform: rotate(90deg);
@@ -366,6 +382,9 @@ $shadow_edgetop: 0px -6px 12px rgba(0,0,0,0.8);
   margin-left: 132px;
   padding-top: $base;
   padding-bottom: $base/2;
+
+  position: absolute;
+  right: 15-$vertical-length;
 
   border-top: $border-thin solid $color-black;
   border-bottom: $border-thin solid $color-black;
@@ -380,7 +399,7 @@ $shadow_edgetop: 0px -6px 12px rgba(0,0,0,0.8);
   /* left: -200px; */
 }
   ._vertical-container {
-    height: 900px;
+    height: $vertical-length;
   }
 
 

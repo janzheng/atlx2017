@@ -4,6 +4,7 @@ $border-line: 1px;
 $border-thin: 2px;
 $border-medium: 3px;
 $border-thick: 6px;
+$border-massive: 12px;
 
 %border-base {
   padding: 0;
@@ -23,6 +24,10 @@ $border-thick: 6px;
   @extend %border-base;
   border-top: $border-thick solid $color-black;
 }
+  ._border-massive, %border-massive {
+    @extend %border-base;
+    border-top: $border-massive solid $color-black;
+  }
   ._border-thick-text {
     text-align: center;
     padding: $base/2 0;
@@ -55,7 +60,6 @@ $border-thick: 6px;
   @extend %border-base;
   border-top: 1px dotted $color-black;
 }
-
 ._border-dotted, %border-dotted {
   @extend %border-base;
   border-top: $border-thick dotted $color-black;
@@ -65,6 +69,14 @@ $border-thick: 6px;
   @extend %border-base;
   border-top: $border-thick double $color-black;
 }
+  ._border-thin-double-box, %border-thin-double-box {
+    border: $border-thick double $color-black;
+  }
+  ._border-thick-double, %border-thick-double {
+    @extend %border-base;
+    border-top: $border-thick double $color-black;
+  }
+
 
 ._border-dashed, %border-dashed {
   @extend %border-base;
@@ -74,9 +86,13 @@ $border-thick: 6px;
   background-image: linear-gradient(to right, $color-black 50%, rgba(255, 255, 255, 0) 0%);
   background-position: left;
   // background-size: 18px 24px;
-  background-size: 24px 4px;
+  background-size: 21px 4px;
   background-repeat: repeat-x;
 }
+  ._border-thin-dashed, %border-thin-dashed {
+    @extend %border-dashed;
+    height: $border-thin;
+  }
 
 ._border-triangle, %border-triangle {
   height: 12px;
@@ -87,6 +103,15 @@ $border-thick: 6px;
   background-repeat: repeat-x;
   border: 0;
 }
+  ._border-triangle-2, %border-triangle-2 {
+    height: 12px;
+    width: 100%;
+    background-image: linear-gradient(34deg, rgba(255, 255, 255, 0) 50%, #333333 0%);
+    background-position: right;
+    background-size: 16px 12px;
+    background-repeat: repeat-x;
+    border: 0;
+  }
 
 ._border-hatch, %border-hatch {
   height: 6px;
@@ -102,6 +127,8 @@ $border-thick: 6px;
   background-repeat: repeat-x;
   border: 0;
 }
+
+
 
 ._border-banner {
   text-align: center;
@@ -151,6 +178,8 @@ $border-thick: 6px;
 
 
 
+
+// Border styles for content blocks (e.g. homepage)
 
 
 

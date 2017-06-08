@@ -32,10 +32,27 @@
 $(document).ready(function() {
   var windowHeight = $(window).height();
   var logoHeight = $('.page-home--logo').height();
-  console.log(windowHeight);
+  console.log('window height: ' + windowHeight);
 
-  $('._windowHeight').css({'height': windowHeight * 0.75});
-  // $('.page-home--logo').css({'padding-top': (windowHeight * 0.75)/2 - logoHeight/2})
+  $('._windowHeight').css({'height': windowHeight * 0.5});
+
+  var eventTime = moment("20170602","YYYYMMDD").unix();
+  var interval = 1000;
+
+  duration = moment.duration(eventTime - moment().unix(), 'seconds');
+    $('._timeLeft--months').text(duration.months());
+    $('._timeLeft--days').text(duration.days());
+    $('._timeLeft--hours').text(duration.hours());
+    $('._timeLeft--minutes').text(duration.minutes());
+    $('._timeLeft--seconds').text(duration.seconds());
+  setInterval(function(){
+    duration = moment.duration(eventTime - moment().unix(), 'seconds');
+      $('._timeLeft--months').text(duration.months());
+      $('._timeLeft--days').text(duration.days());
+      $('._timeLeft--hours').text(duration.hours());
+      $('._timeLeft--minutes').text(duration.minutes());
+      $('._timeLeft--seconds').text(duration.seconds());
+  }, interval);
 });
 
 
@@ -54,8 +71,20 @@ $(function() {
         urls : ['app/fonts/trendsansone/trendsansone.css'] // URL to css
     },
     active: function() {
+      $("._headline-max").each(function( index ) {
+        $(this).bigtext({
+            // maxfontsize: 96 // default is 528 (in px)
+        });
+      });
       $("._headline-fixed").each(function( index ) {
-        $(this).bigtext();
+        $(this).bigtext({
+            maxfontsize: 96 // default is 528 (in px)
+        });
+      });
+      $("._secondline-fixed").each(function( index ) {
+        $(this).bigtext({
+            maxfontsize: 55 // default is 528 (in px)
+        });
       });
     }
   });

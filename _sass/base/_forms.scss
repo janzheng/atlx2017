@@ -465,7 +465,7 @@ textarea, .textarea {
 #mc_embed_signup {
   margin-bottom: $base*2;
   // padding: $base $base*4;
-  margin-top: $base*4;
+  // margin-top: $base*4;
   * {
     text-align: center;
     margin: 0 auto;
@@ -477,6 +477,7 @@ textarea, .textarea {
     // margin-top: $base;
     margin-bottom: $base;
     height: 58px; // line height not working; is 0??
+  
   }
 }
 #mce-content {
@@ -486,6 +487,7 @@ textarea, .textarea {
 #mce-EMAIL {
   margin-top: $base;
   min-width: 60%;
+  width: 100%;
   
   // @include screen-mobile-only {
   //   width: 100%;

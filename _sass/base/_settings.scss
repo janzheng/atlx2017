@@ -172,44 +172,44 @@ $width_lg_min: 1200px !default;
 
 
 
-._hideMobile {
+._hidden-mobile {
   @media (max-width: $width_xs_max) {
     display: none;
   }
 }
-._hideTabletDown {
+._hidden-tablet-down {
   @media (max-width: $width_sm_max) {
     display: none;
   }
 }
-  ._hideTabletOnly {
+  ._hidden-tablet-only {
     @media (min-width: $width_sm_min) and (max-width: $width_sm_max) {
       display: none;
     }
   }
-  ._hideTabletUp {
+  ._hidden-tablet-up {
     @media (min-width: $width_sm_min) {
       display: none;
     }
   }
-._hideDesktopDown {
+._hidden-desktop-down {
   @media (max-width: $width_md_max) {
     display: none;
   }
 }
-  ._hideDesktopUp {
+  ._hidden-tablet-up {
     @media (min-width: $width_md_min) {
       display: none;
     }
   }
 
-._hideMagicUp {
+._hidden-magic-up {
   @media (min-width: $width_magic) {
     display: none;
   }
 }
 
-  ._hideMagicToTablet {
+  ._hidden-magic-to-tablet {
     @media (min-width: $width_magic) and (max-width: $width_sm_min) {
       display: none;
     }
@@ -217,19 +217,19 @@ $width_lg_min: 1200px !default;
 
 
 
-._showMobileOnly {
+._show-mobile-only {
   display: none;
   @media (max-width: $width_xs_max) {
     display: inherit;
   }
 }
-._showTabletUp {
+._show-tablet-up {
   display: none;
   @media (min-width: $width_sm_min) {
     display: inherit;
   }
 }
-._showMagicToTablet {
+._show-magic-to-tablet {
   display: none;
   @media (min-width: $width_magic) and (max-width: $width_sm_min) {
     display: inherit;
@@ -368,29 +368,28 @@ $max-widest: $width_lg_min;
 
 
 
-// Nav style
-._nav {
-  text-align: center;
-  margin: 0 auto;
-}
-._nav-inline {
-  position: relative;
-  top: -25px;
-  margin-left: $base;
-  @media (max-width: 992px) {
-    display: block;
-    top: inherit;
-    margin: inherit;
-    // text-align: center;
-    // margin: 0 auto;
+
+// "New!" for the homepage
+
+._burst {    
+  position: absolute;
+  padding: $base;
+  background: $color-black;
+  top: -60px;
+  z-index: 200;
+  height: 80px;
+  width: 80px;
+  right: -40px;
+  border-radius: 100px;
+  transform: rotate(-15deg);
+  span {
+    color: $color-paper;    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
   }
 }
-  ._nav-logo {
-    
-  }
-
-
-
 
 
 

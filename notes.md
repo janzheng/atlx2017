@@ -53,9 +53,41 @@ advanced
 
 
 
+Log
+----------------------
+
+1/6/17
+- feature + testing spec list
+– done with all styling / static site
+- starting migration to React/Meteor
+
+
+
+
+
+
 
 DONE
 ——————————————————————
 
 12/24
 – mailchimp integration
+
+
+
+
+
+
+
+
+
+
+FUTURE
+——————————————————————
+- dance signup / light social network / dance event tracking + favoriting
+- event registration + setup; meta admin
+
+
+
+
+

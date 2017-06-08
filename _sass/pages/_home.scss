@@ -7,12 +7,37 @@
 //  HOMEPAGE
 // 
 
-
+  .page-home {
+    position: relative;
+  }
+    ._nav-home {
+      ._nav-inline {
+        // force the menu to behave between breakpoints
+        display: block;
+        top: inherit;
+      }
+      text-align: center;
+      @include screen-sm {
+        padding-top: $base*2;
+        // position: absolute;
+        // top: inherit;
+        // bottom: 30px;
+        // top: 200px;
+        // top: 210px;
+        // top: 190px;
+        // left: 50%;
+        // transform: translate(-50%, 0%);
+        width: 100%;
+      }
+      @include screen-xs-only {
+        margin-top: $base*2;
+      }
+    }
 
     // 
     //  LOGO
     // 
-    $logo-height: 500px;
+    $logo-height: 440px; // 440 for mobile
     .page-home--logo {
       text-align: center;
       position: relative;
@@ -28,7 +53,7 @@
       }
     }
       .page-home--logo-container {
-        height: $logo-height;
+        min-height: $logo-height;
         position: relative;
       }
       .page-home--logo-bg {
@@ -39,7 +64,7 @@
         background-repeat: no-repeat;
         // background-color: red;
         width: 100%;
-        height: $logo-height;
+        min-height: $logo-height;
         position: absolute;
         top: 0;
         z-index: 0;
@@ -79,23 +104,82 @@
 
 
 
-._burst {    
-  position: absolute;
-  padding: $base;
-  background: $color-black;
-  top: -60px;
-  z-index: 200;
-  height: 80px;
-  width: 80px;
-  right: -40px;
-  border-radius: 100px;
-  transform: rotate(-15deg);
-  span {
-    color: $color-paper;    
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
+.page-home--content {
+
+}
+  .page-home--headline {
+    margin-bottom: $base*2;
+
+    span {
+      // line-height: 0.8;
+    }
+    hr {
+      // margin-top: $base;
+      margin-bottom: $base*2;
+    }
+  }
+  .page-home--row {
+    margin-bottom: $base*2;
+  }
+
+  .page-home--sections {
+
+  }
+  .page-home--section {
+    padding-top: $base;
+    padding-bottom: $base;
+  }
+    .page-home--video {
+      // height: 300px;
+      // background: $color-white;
+    }
+    .page-home--upNext {
+
+    }
+
+
+
+
+
+
+
+
+.page-home--email {
+  #mc_embed_signup {
+    margin: 0;
+  }
+  #mce-content {
+    padding: $base;
+  }
+  @include screen-sm {
+    border: $border-thick double $color-black;
+    // padding: $base !important;
+
+    hr {
+      display: none;
+    }
   }
 }
+
+
+.page-home--music {
+  span, h4 {
+    @extend %h4;
+    font-size: $base-p1;
+    line-height: 1;
+  }
+  h5 {
+    padding-top: $base;
+  }
+}
+
+
+.page-home--next {
+  padding-bottom: $base*2;
+  h4 {
+    padding: 0;
+  }
+}
+
+
 

@@ -1,0 +1,40 @@
+
+
+
+
+// Nav style
+._nav {
+  // text-align: center;
+  margin: 0 auto;
+
+  .container {
+    padding-top: $base;
+  }
+}
+
+._nav-inline {
+  position: relative;
+  top: -25px;
+  margin-left: $base;
+
+  ._button {
+    font-size: $base +2px;
+  }
+
+  @include screen-sm-down {
+    display: block;
+    top: inherit;
+    margin: inherit;
+    // text-align: center;
+    // margin: 0 auto;
+
+    ._button {
+      font-size: $base;
+    }
+  }
+}
+  ._nav-logo {
+    
+  }
+
+
